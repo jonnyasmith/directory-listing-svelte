@@ -6,10 +6,9 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			fallback: '404.html',
 			pages: 'build', // Where static files go
 			assets: 'build',
-			fallback: undefined, // No SPA fallback for now
+			fallback: '404.html', // Set to 'index.html' for SPA fallback
 			precompress: true // Gzip files for faster delivery
 		}),
 		paths: {
