@@ -1,13 +1,10 @@
-<script lang="ts" module>
-	import type { Business } from '$lib/types';
-	type PropTypes = {
-		business: Business;
-	};
-</script>
-
 <script lang="ts">
 	import { base } from '$app/paths';
-	let { business }: PropTypes = $props();
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+
+	const { business } = data;
 </script>
 
 <article class="business-details" itemscope itemtype="http://schema.org/LocalBusiness">

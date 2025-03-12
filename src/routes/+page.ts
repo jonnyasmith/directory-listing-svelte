@@ -1,6 +1,3 @@
-// Ensure this page is prerendered
-export const prerender = true;
-
 export function load() {
 	return {
 		title: 'Local Business Directory - Find Businesses Near You',
