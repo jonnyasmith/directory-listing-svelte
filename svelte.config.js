@@ -6,11 +6,15 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
+			fallback: '404.html',
 			pages: 'build', // Where static files go
 			assets: 'build',
 			fallback: undefined, // No SPA fallback for now
 			precompress: true // Gzip files for faster delivery
-		})
+		}),
+		paths: {
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		}
 	}
 };
 
