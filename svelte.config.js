@@ -12,7 +12,7 @@ const config = {
 			precompress: true // Gzip files for faster delivery
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/sveltekit-github-pages' : ''
+			base: process.env.BASE_PATH || ''
 		}
 	}
 };

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { businesses } from '$lib/data';
+	import { base } from '$app/paths';
 
 	const business = businesses.find((b) => b.id === Number(page.params.id));
 
@@ -12,7 +13,7 @@
 <p><strong>Category:</strong> {business.category}</p>
 <p><strong>Address:</strong> {business.address}</p>
 <p><strong>Phone:</strong> {business.phone}</p>
-<a href="/">Back to Directory</a>
+<a href="{base}/">Back to Directory</a>
 
 <style>
 	p {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { businesses } from '$lib/data';
+	import { base } from '$app/paths';
 </script>
 
 <h1>Local Business Directory</h1>
@@ -7,7 +8,7 @@
 <ul>
 	{#each businesses as business}
 		<li>
-			<a href={`/listing/${business.id}`}>{business.name}</a> - {business.category}
+			<a href={`${base}/listing/${business.id}`}>{business.name}</a> - {business.category}
 		</li>
 	{/each}
 </ul>
