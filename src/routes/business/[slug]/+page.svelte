@@ -7,23 +7,25 @@
 	const { business } = data;
 </script>
 
-<div class="business-details">
-	<h1>{business.name}</h1>
-	<div class="business-category">{business.category}</div>
+<article class="business-details" itemscope itemtype="http://schema.org/LocalBusiness">
+	<h1 itemprop="name">{business.name}</h1>
+	<div class="business-category" itemprop="category">{business.category}</div>
 
 	<div class="business-info">
 		<div class="info-row">
 			<strong>Address:</strong>
-			<address>{business.address}</address>
+			<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				<span itemprop="streetAddress">{business.address}</span>
+			</address>
 		</div>
 		<div class="info-row">
 			<strong>Phone:</strong>
-			<a href="tel:{business.phone}">{business.phone}</a>
+			<a href="tel:{business.phone}" itemprop="telephone">{business.phone}</a>
 		</div>
 	</div>
 
 	<a href={`${base}/`} class="back-link">Back to Directory</a>
-</div>
+</article>
 
 <style>
 	.business-details {

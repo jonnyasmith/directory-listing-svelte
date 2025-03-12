@@ -8,11 +8,14 @@ const config = {
 		adapter: adapter({
 			pages: 'build', // Where static files go
 			assets: 'build',
-			fallback: '404.html', // Set to 'index.html' for SPA fallback
+			fallback: '404.html', // Set to '404.html' for better SEO than SPA fallback
 			precompress: true // Gzip files for faster delivery
 		}),
 		paths: {
 			base: process.env.BASE_PATH || ''
+		},
+		prerender: {
+			entries: ['*'] // Prerender all routes
 		}
 	}
 };
