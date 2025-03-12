@@ -1,10 +1,13 @@
+<script lang="ts" module>
+	import type { Business } from '$lib/types';
+	type PropTypes = {
+		business: Business;
+	};
+</script>
+
 <script lang="ts">
 	import { base } from '$app/paths';
-	import type { Business } from '$lib/types';
-
-	// The data is now provided directly from the load function
-	export let data: { business: Business };
-	const { business } = data;
+	let { business }: PropTypes = $props();
 </script>
 
 <article class="business-details" itemscope itemtype="http://schema.org/LocalBusiness">
