@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import { base } from '$app/paths';
 
 	let { data }: PageProps = $props();
 
@@ -43,7 +44,7 @@
 		</div>
 
 		<a
-			href="/"
+			href="{base}/"
 			class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium"
 		>
 			<svg

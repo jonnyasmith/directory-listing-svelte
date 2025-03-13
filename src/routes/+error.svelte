@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 </script>
 
 <div class="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
@@ -10,7 +11,7 @@
 		Sorry, the page you're looking for doesn't exist or another error occurred.
 	</p>
 	<a
-		href="/"
+		href="{base}/"
 		class="px-5 py-3 text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors"
 	>
 		Go back to homepage

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { businesses } from '$lib/data';
+	import { base } from '$app/paths';
 </script>
 
 <section class="max-w-6xl mx-auto px-4 py-12">
@@ -12,7 +13,7 @@
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 		{#each businesses as business}
-			<a href={`/business/${business.slug}`} class="group">
+			<a href={`${base}/business/${business.slug}`} class="group">
 				<article
 					class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100 hover:border-gray-200 hover:-translate-y-1"
 				>
