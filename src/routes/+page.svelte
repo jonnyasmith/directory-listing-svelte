@@ -3,15 +3,15 @@
 	import { BusinessCard } from '$lib/components/features/business-card';
 </script>
 
-<section class="max-w-6xl mx-auto px-4 py-12">
-	<div class="text-center mb-12">
-		<h1 class="text-4xl font-bold text-gray-900 mb-3">Local Business Directory</h1>
-		<p class="text-xl text-gray-600 max-w-2xl mx-auto">
-			Find and connect with quality local businesses in your area.
+<section class="mx-auto max-w-6xl px-4 py-12">
+	<div class="mb-12 text-center">
+		<h1 class="mb-3 text-4xl font-bold text-foreground">Local Business Directory</h1>
+		<p class="mx-auto max-w-2xl text-xl text-muted-foreground">
+			Find and explore the best local businesses by category
 		</p>
 	</div>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each businesses as business}
 			<BusinessCard {business} />
 		{/each}
