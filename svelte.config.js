@@ -5,10 +5,15 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
+		// For GitHub Pages deployment - sets the base path to the repository name
+		paths: {
+			base: process.env.BASE_PATH || ''
+		},
+		// Static adapter configuration
 		adapter: adapter({
 			pages: 'build', // Where static files go
 			assets: 'build',
-			fallback: '404.html', // Set to '404.html' for better SEO than SPA fallback
+			fallback: '404.html', // GitHub Pages uses 404.html as the fallback for SPAs
 			precompress: true // Gzip files for faster delivery
 		}),
 		prerender: {
