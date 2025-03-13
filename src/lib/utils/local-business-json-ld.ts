@@ -1,10 +1,4 @@
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import type { Business, Address } from './types';
-
-export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs));
-}
+import type { Business } from '$lib/types';
 
 export function generateLocalBusinessJsonLd(business: Business) {
 	// Create address object for JSON-LD

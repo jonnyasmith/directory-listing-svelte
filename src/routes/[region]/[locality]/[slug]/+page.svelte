@@ -2,7 +2,6 @@
 	import type { PageProps } from './$types';
 	import { base } from '$app/paths';
 	import { generateLocalBusinessJsonLd } from '$lib/utils';
-	import BackButton from '$lib/components/ui/back-button.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -15,10 +14,6 @@
 </svelte:head>
 
 <div class="mx-auto max-w-4xl px-4 py-8">
-	<div class="mb-6">
-		<BackButton />
-	</div>
-
 	<article
 		class="rounded-lg bg-white p-8 shadow-lg"
 		itemscope
@@ -96,5 +91,26 @@
 				</div>
 			{/if}
 		</div>
+
+		<a
+			href="{base}/"
+			class="inline-flex items-center font-medium text-blue-600 transition-colors hover:text-blue-800"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="mr-2 h-4 w-4"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M10 19l-7-7m0 0l7-7m-7 7h18"
+				/>
+			</svg>
+			Back to Directory
+		</a>
 	</article>
 </div>

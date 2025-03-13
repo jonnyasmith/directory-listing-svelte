@@ -13,7 +13,11 @@
 <article
 	class="relative h-full rounded-lg border border-border bg-card p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl"
 >
-	<Link href={`${base}/business/${business.slug}`} class="group" aria-label={business.name}>
+	<Link
+		href={`${base}/${business.addressObj.addressRegion.toLowerCase()}/${business.addressObj.addressLocality.toLowerCase()}/${business.slug}`}
+		class="group"
+		aria-label={business.name}
+	>
 		<h2
 			class="mb-2 text-xl font-semibold text-card-foreground transition-colors group-hover:text-primary"
 		>
