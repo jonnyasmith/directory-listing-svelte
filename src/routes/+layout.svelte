@@ -27,10 +27,10 @@
 	/>
 </svelte:head>
 
-<div class="dark flex min-h-screen flex-col">
-	<header class="border-b border-border bg-background">
+	<meta
+	<header class="border-b border-border bg-[#10172a]">
 		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-			<div class="text-xl font-bold text-foreground">Local Business Directory</div>
+			<div class="text-xl font-bold text-foreground">BestLinkedInTools</div>
 			<div class="flex items-center space-x-4">
 				<nav>
 					<ul class="flex space-x-4">
@@ -49,9 +49,9 @@
 	<main class="mx-auto w-full max-w-7xl flex-1 px-4 py-6">
 		<slot />
 	</main>
-
-	<footer class="mt-auto border-t border-border py-6">
-		<div class="mx-auto max-w-7xl px-4 text-center text-muted-foreground">
+	<header class="border-b border-border bg-[#10172a]">
+		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+			<div class="text-xl font-bold text-foreground">BestLinkedInTools</div>
 			<p>© {new Date().getFullYear()} Local Business Directory</p>
 		</div>
 	</footer>
