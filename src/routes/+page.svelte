@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Button } from '$lib/components/ui/button';
 	import { businesses } from '$lib/data';
 </script>
 
@@ -10,9 +11,7 @@
 		{#each businesses as business}
 			<article class="business-card">
 				<h2 class="business-name">
-					<a href={`/business/${business.slug}`} class="business-link">
-						{business.name}
-					</a>
+					<Button variant="ghost" href={`/business/${business.slug}`}>{business.name}</Button>
 				</h2>
 				<div class="business-category">{business.category}</div>
 				<div class="business-teaser">{business.address}</div>
