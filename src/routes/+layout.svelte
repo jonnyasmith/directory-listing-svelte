@@ -26,24 +26,14 @@
 	/>
 </svelte:head>
 
-<main>
-	<slot />
-</main>
+<div class="min-h-screen flex flex-col">
+	<main class="flex-1 max-w-7xl mx-auto px-4 py-6 w-full">
+		<slot />
+	</main>
 
-<footer>
-	<p>© {new Date().getFullYear()} Local Business Directory</p>
-</footer>
-
-<style>
-	main {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 1rem;
-	}
-	footer {
-		text-align: center;
-		margin-top: 2rem;
-		padding: 1rem;
-		border-top: 1px solid #eee;
-	}
-</style>
+	<footer class="py-6 border-t border-gray-200 mt-auto">
+		<div class="max-w-7xl mx-auto px-4 text-center text-gray-600">
+			<p>© {new Date().getFullYear()} Local Business Directory</p>
+		</div>
+	</footer>
+</div>

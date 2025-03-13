@@ -1,84 +1,34 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
 	import { businesses } from '$lib/data';
 </script>
 
-<section class="directory">
-	<h1>Local Business Directory</h1>
-	<p class="intro">Find and connect with quality local businesses in your area.</p>
+<section class="max-w-6xl mx-auto px-4 py-12">
+	<div class="text-center mb-12">
+		<h1 class="text-4xl font-bold text-gray-900 mb-3">Local Business Directory</h1>
+		<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+			Find and connect with quality local businesses in your area.
+		</p>
+	</div>
 
-	<div class="business-list">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 		{#each businesses as business}
-			<article class="business-card">
-				<h2 class="business-name">
-					<Button variant="ghost" href={`/business/${business.slug}`}>{business.name}</Button>
-				</h2>
-				<div class="business-category">{business.category}</div>
-				<div class="business-teaser">{business.address}</div>
-			</article>
+			<a href={`/business/${business.slug}`} class="group">
+				<article
+					class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100 hover:border-gray-200 hover:-translate-y-1"
+				>
+					<h2
+						class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors"
+					>
+						{business.name}
+					</h2>
+					<div class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm mb-3">
+						{business.category}
+					</div>
+					<div class="text-gray-600">
+						{business.address}
+					</div>
+				</article>
+			</a>
 		{/each}
 	</div>
 </section>
-
-<style>
-	.directory {
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-	.intro {
-		font-size: 1.2rem;
-		color: #555;
-		margin-bottom: 2rem;
-	}
-
-	.business-list {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.business-card {
-		background: #fff;
-		border-radius: 8px;
-		padding: 1.5rem;
-		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-		transition:
-			transform 0.2s,
-			box-shadow 0.2s;
-	}
-
-	.business-card:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	}
-
-	.business-name {
-		margin-top: 0;
-		margin-bottom: 0.5rem;
-		font-size: 1.5rem;
-	}
-
-	.business-link {
-		color: #0066cc;
-		text-decoration: none;
-	}
-
-	.business-link:hover {
-		text-decoration: underline;
-	}
-
-	.business-category {
-		display: inline-block;
-		background: #f0f0f0;
-		padding: 0.2rem 0.6rem;
-		border-radius: 20px;
-		font-size: 0.85rem;
-		margin: 0.5rem 0;
-	}
-
-	.business-teaser {
-		color: #666;
-		margin-top: 0.5rem;
-	}
-</style>
