@@ -1,4 +1,5 @@
 import { businesses } from '$lib/data';
+import { config } from '$lib/config';
 
 export interface City {
 	locality: string;
@@ -19,8 +20,7 @@ export function load() {
 
 	return {
 		cities: uniqueCities,
-		title: 'Local Business Directory - Find Businesses Near You',
-		description:
-			'Browse our comprehensive directory of local businesses including cafes, retail stores, and fitness centers.'
+		title: config.seoTitle,
+		description: config.seoDescription
 	};
 }
