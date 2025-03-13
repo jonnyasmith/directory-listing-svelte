@@ -11,9 +11,6 @@ const config = {
 			fallback: '404.html', // Set to '404.html' for better SEO than SPA fallback
 			precompress: true // Gzip files for faster delivery
 		}),
-		paths: {
-			base: process.env.BASE_PATH || ''
-		},
 		prerender: {
 			entries: ['*'] // Prerender all routes
 		}

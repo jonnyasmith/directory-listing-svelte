@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { businesses } from '$lib/data';
-	import { base } from '$app/paths';
 </script>
 
 <section class="directory">
@@ -11,7 +10,7 @@
 		{#each businesses as business}
 			<article class="business-card">
 				<h2 class="business-name">
-					<a href={`${base}/business/${business.slug}`} class="business-link">
+					<a href={`/business/${business.slug}`} class="business-link">
 						{business.name}
 					</a>
 				</h2>

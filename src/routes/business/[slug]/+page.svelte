@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -24,7 +23,7 @@
 		</div>
 	</div>
 
-	<a href={`${base}/`} class="back-link">Back to Directory</a>
+	<a href="/" class="back-link">Back to Directory</a>
 </article>
 
 <style>
