@@ -4,39 +4,41 @@
 
 @layer base {
 	:root {
-		--background: 215 35% 15%; /* Dark navy blue */
-		--foreground: 0 0% 98%; /* White text */
-		--muted: 215 25% 25%;
-		--muted-foreground: 215 5% 85%;
-		--popover: 215 35% 15%;
-		--popover-foreground: 0 0% 98%;
-		--card: 215 30% 18%; /* Slightly lighter navy */
-		--card-foreground: 0 0% 98%;
-		--border: 215 25% 25%;
-		--input: 215 25% 25%;
-		--primary: 195 71% 48%; /* Light blue accent */
+		/* Light theme (default) */
+		--background: 215 35% 97%; /* Light background */
+		--foreground: 215 35% 15%; /* Dark text for contrast */
+		--muted: 215 25% 90%;
+		--muted-foreground: 215 25% 40%;
+		--popover: 215 35% 97%;
+		--popover-foreground: 215 35% 15%;
+		--card: 215 30% 94%; /* Slightly darker card background */
+		--card-foreground: 215 35% 15%;
+		--border: 215 25% 85%;
+		--input: 215 25% 85%;
+		--primary: 195 71% 48%; /* Keep primary color consistent for brand recognition */
 		--primary-foreground: 0 0% 100%;
-		--secondary: 215 30% 18%;
-		--secondary-foreground: 0 0% 98%;
+		--secondary: 215 30% 90%;
+		--secondary-foreground: 215 35% 15%;
 		--accent: 195 71% 48%;
 		--accent-foreground: 0 0% 100%;
 		--destructive: 0 72.2% 50.6%;
 		--destructive-foreground: 0 0% 98%;
 		--ring: 195 71% 48%;
 		--radius: 0.5rem;
-		--header-background: 215 43% 12%; /* #10172a - Darker navy for header/footer */
-		--header-foreground: 0 0% 98%; /* White text for header/footer */
-		--sidebar-background: 215 35% 15%;
-		--sidebar-foreground: 0 0% 98%;
+		--header-background: 215 43% 20%; /* Lighter but still distinct header for light theme */
+		--header-foreground: 0 0% 98%; /* Keep white text for header */
+		--sidebar-background: 215 35% 97%;
+		--sidebar-foreground: 215 35% 15%;
 		--sidebar-primary: 195 71% 48%;
 		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 215 25% 25%;
-		--sidebar-accent-foreground: 0 0% 98%;
-		--sidebar-border: 215 25% 25%;
+		--sidebar-accent: 215 25% 90%;
+		--sidebar-accent-foreground: 215 35% 15%;
+		--sidebar-border: 215 25% 85%;
 		--sidebar-ring: 195 71% 48%;
 	}
 
 	.dark {
+		/* Dark theme (moved from root) */
 		--background: 215 35% 15%; /* Dark navy blue */
 		--foreground: 0 0% 98%; /* White text */
 		--muted: 215 25% 25%;
