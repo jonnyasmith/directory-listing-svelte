@@ -3,6 +3,7 @@
 	import { page } from '$app/state';
 	import { Button } from '$lib/components/ui/button';
 	import { config } from '$lib/config';
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -24,18 +25,20 @@
 		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
 			<div class="flex items-center">
 				<!-- Logo placeholder - you can replace with actual logo component later -->
-				<div class="text-xl font-bold text-foreground">{config.siteName}</div>
+				<a href="{base}/" class="transition-colors hover:text-primary">
+					<div class="text-xl font-bold text-foreground">{config.siteName}</div>
+				</a>
 			</div>
 			<div class="flex items-center space-x-8">
 				<nav>
 					<ul class="flex space-x-8">
 						<li>
-							<a href="/by-region" class="font-medium text-foreground hover:text-primary"
+							<a href="{base}/by-region" class="font-medium text-foreground hover:text-primary"
 								>{config.navLocationLabel}</a
 							>
 						</li>
 						<li>
-							<a href="/about" class="font-medium text-foreground hover:text-primary"
+							<a href="{base}/about" class="font-medium text-foreground hover:text-primary"
 								>{config.navAboutLabel}</a
 							>
 						</li>
