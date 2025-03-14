@@ -4,6 +4,13 @@
 	import { Button } from '$lib/components/ui/button';
 	import { config } from '$lib/config';
 	import { base } from '$app/paths';
+	import { ModeWatcher, toggleMode, mode } from 'mode-watcher';
+	import SunIcon from '@lucide/svelte/icons/sun';
+	import MoonIcon from '@lucide/svelte/icons/moon';
+
+	function toggleTheme() {
+		toggleMode();
+	}
 </script>
 
 <svelte:head>
@@ -20,6 +27,7 @@
 	<meta name="twitter:description" content={page.data.description || config.seoDescription} />
 </svelte:head>
 
+<ModeWatcher />
 <div class="flex min-h-svh flex-col">
 	<header class="bg-header border-b border-border">
 		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
@@ -31,7 +39,7 @@
 			</div>
 			<div class="flex items-center space-x-8">
 				<nav>
-					<ul class="flex space-x-8">
+					<ul class="flex items-center space-x-8">
 						<li>
 							<a
 								href="{base}/by-region"
@@ -43,6 +51,20 @@
 							<a href="{base}/about" class="text-header-foreground font-medium hover:text-primary"
 								>{config.navAboutLabel}</a
 							>
+						</li>
+						<li>
+							<Button
+								variant="ghost"
+								size="icon"
+								class="text-header-foreground"
+								onclick={toggleTheme}
+							>
+								{#if $mode === 'dark'}
+									<SunIcon class="h-8 w-8" />
+								{:else}
+									<MoonIcon class="h-8 w-8" />
+								{/if}
+							</Button>
 						</li>
 					</ul>
 				</nav>
