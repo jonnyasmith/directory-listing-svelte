@@ -5,6 +5,8 @@
 	import { slugify } from '$lib/utils';
 	import BackButton from '$lib/components/ui/back-button.svelte';
 	import { config } from '$lib/config';
+	import { FeatureCard } from '$lib/components/features/feature-card';
+	import { CompactCard } from '$lib/components/features/compact-card';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -21,32 +23,26 @@
 		<BackButton />
 	</div>
 
-	<!-- Localities Section -->
+	<!-- Localities Section - Primary Content -->
 	<div class="mb-10">
-		<h2 class="mb-4 text-2xl font-semibold text-foreground">Browse by Locality</h2>
-		<div class="flex flex-wrap gap-3">
+		<h2 class="mb-6 text-2xl font-semibold text-foreground">Cities in {data.region}</h2>
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each data.localities as locality}
-				<a
+				<FeatureCard
+					title={locality}
 					href="/{slugify(data.region)}/{slugify(locality)}"
-					class="inline-block rounded-md bg-primary/10 px-4 py-2 font-medium text-primary transition-colors hover:bg-primary/20"
-				>
-					{locality}
-				</a>
+					subtitle={`Explore businesses in ${locality}`}
+				/>
 			{/each}
 		</div>
 	</div>
 
-	<!-- Other States/Regions Section -->
+	<!-- Other States/Regions Section - Secondary Content -->
 	<div>
 		<h2 class="mb-4 text-2xl font-semibold text-foreground">Browse Other States</h2>
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{#each data.otherRegions as region}
-				<a
-					href="/{slugify(region)}"
-					class="block rounded-md bg-primary/10 p-6 text-center font-medium text-primary transition-colors hover:bg-primary/20"
-				>
-					{region}
-				</a>
+				<CompactCard label={region} href="/{slugify(region)}" />
 			{/each}
 		</div>
 	</div>

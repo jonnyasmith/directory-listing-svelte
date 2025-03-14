@@ -4,6 +4,7 @@
 	import { BusinessCard } from '$lib/components/features/business-card';
 	import { slugify } from '$lib/utils';
 	import { config } from '$lib/config';
+	import { CompactCard } from '$lib/components/features/compact-card';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -29,12 +30,10 @@
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{#each data.cities as city}
-				<a
+				<CompactCard
+					label={`${city.locality}, ${city.regionShort}`}
 					href="/{slugify(city.region)}/{slugify(city.locality)}"
-					class="block rounded-md bg-primary/10 p-6 text-center font-medium text-primary transition-colors hover:bg-primary/20"
-				>
-					{city.locality}, {city.regionShort}
-				</a>
+				/>
 			{/each}
 		</div>
 	</div>

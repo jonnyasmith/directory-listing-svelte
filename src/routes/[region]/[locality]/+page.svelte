@@ -4,6 +4,7 @@
 	import BackButton from '$lib/components/ui/back-button.svelte';
 	import { slugify } from '$lib/utils';
 	import { config } from '$lib/config';
+	import { CompactCard } from '$lib/components/features/compact-card';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -37,12 +38,7 @@
 			<h2 class="mb-4 text-2xl font-semibold text-foreground">Other Cities in {data.region}</h2>
 			<div class="flex flex-wrap gap-3">
 				{#each data.otherLocalities as locality}
-					<a
-						href="/{slugify(data.region)}/{slugify(locality)}"
-						class="inline-block rounded-md bg-primary/10 px-4 py-2 font-medium text-primary transition-colors hover:bg-primary/20"
-					>
-						{locality}
-					</a>
+					<CompactCard label={locality} href="/{slugify(data.region)}/{slugify(locality)}" />
 				{/each}
 			</div>
 		</div>

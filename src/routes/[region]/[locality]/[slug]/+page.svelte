@@ -2,6 +2,9 @@
 	import type { PageProps } from './$types';
 	import { base } from '$app/paths';
 	import { generateLocalBusinessJsonLd } from '$lib/utils';
+	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
+	import { Badge } from '$lib/components/ui/badge';
+	import BackButton from '$lib/components/ui/back-button.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -14,25 +17,21 @@
 </svelte:head>
 
 <div class="mx-auto max-w-4xl px-4 py-8">
-	<article
-		class="rounded-lg bg-white p-8 shadow-lg"
-		itemscope
-		itemtype="http://schema.org/LocalBusiness"
-	>
-		<h1 class="mb-3 text-3xl font-bold text-gray-900" itemprop="name">{business.name}</h1>
+	<div class="mb-6">
+		<BackButton />
+	</div>
 
-		<div
-			class="mb-6 inline-block rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
-			itemprop="category"
-		>
-			{business.category}
-		</div>
+	<Card class="p-8" itemscope itemtype="http://schema.org/LocalBusiness">
+		<CardHeader class="p-0 pb-6">
+			<CardTitle class="text-3xl" itemprop="name">{business.name}</CardTitle>
+			<Badge class="mt-3" itemprop="category">{business.category}</Badge>
+		</CardHeader>
 
-		<div class="mb-8 space-y-4">
+		<CardContent class="space-y-4 p-0">
 			<div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-				<span class="min-w-24 font-medium text-gray-700">Address:</span>
+				<span class="min-w-24 font-medium text-foreground">Address:</span>
 				<address
-					class="not-italic text-gray-600"
+					class="not-italic text-muted-foreground"
 					itemprop="address"
 					itemscope
 					itemtype="http://schema.org/PostalAddress"
@@ -53,18 +52,18 @@
 			</div>
 
 			<div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-				<span class="min-w-24 font-medium text-gray-700">Phone:</span>
-				<a href="tel:{business.phone}" class="text-blue-600 hover:underline" itemprop="telephone">
+				<span class="min-w-24 font-medium text-foreground">Phone:</span>
+				<a href="tel:{business.phone}" class="text-primary hover:underline" itemprop="telephone">
 					{business.phone}
 				</a>
 			</div>
 
 			{#if business.website}
 				<div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-					<span class="min-w-24 font-medium text-gray-700">Website:</span>
+					<span class="min-w-24 font-medium text-foreground">Website:</span>
 					<a
 						href={business.website}
-						class="text-blue-600 hover:underline"
+						class="text-primary hover:underline"
 						itemprop="url"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -76,8 +75,8 @@
 
 			{#if business.openingHours}
 				<div class="flex flex-col gap-2 sm:flex-row sm:items-start">
-					<span class="min-w-24 font-medium text-gray-700">Hours:</span>
-					<div class="text-gray-600">
+					<span class="min-w-24 font-medium text-foreground">Hours:</span>
+					<div class="text-muted-foreground">
 						<div
 							itemprop="openingHoursSpecification"
 							itemscope
@@ -90,27 +89,6 @@
 					</div>
 				</div>
 			{/if}
-		</div>
-
-		<a
-			href="{base}/"
-			class="inline-flex items-center font-medium text-blue-600 transition-colors hover:text-blue-800"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="mr-2 h-4 w-4"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M10 19l-7-7m0 0l7-7m-7 7h18"
-				/>
-			</svg>
-			Back to Directory
-		</a>
-	</article>
+		</CardContent>
+	</Card>
 </div>
