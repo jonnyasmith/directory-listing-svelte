@@ -52,7 +52,7 @@
 		<slot />
 	</main>
 
-	<footer class="bg-gray-100">
+	<footer class="bg-[#10172a] text-foreground">
 		<div class="mx-auto max-w-7xl px-4 py-6">
 			<p class="text-center">© {new Date().getFullYear()} {config.siteName}</p>
 		</div>
