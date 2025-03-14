@@ -1,35 +1,40 @@
 <script lang="ts">
+	import { type PageData } from './$types';
 	import { businesses } from '$lib/data';
-	import { base } from '$app/paths';
+	import { BusinessCard } from '$lib/components/features/business-card';
+	import { slugify } from '$lib/utils';
+	import { config } from '$lib/config';
+	import { CompactCard } from '$lib/components/features/compact-card';
+
+	let { data }: { data: PageData } = $props();
 </script>
 
-<section class="max-w-6xl mx-auto px-4 py-12">
-	<div class="text-center mb-12">
-		<h1 class="text-4xl font-bold text-gray-900 mb-3">Local Business Directory</h1>
-		<p class="text-xl text-gray-600 max-w-2xl mx-auto">
-			Find and connect with quality local businesses in your area.
+<!-- Hero Section -->
+<section class="hero-section">
+	<div class="mx-auto max-w-6xl px-4 py-20 text-center">
+		<h2 class="mb-3 text-xl font-semibold">{config.heroTitle}</h2>
+		<h1 class="mb-6 text-5xl font-bold">{config.heroSubtitle}</h1>
+		<p class="mb-4 text-xl">
+			{config.heroDescription1}
+		</p>
+		<p class="mx-auto max-w-3xl text-lg">
+			{config.heroDescription2}
 		</p>
 	</div>
+</section>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-		{#each businesses as business}
-			<a href={`${base}/business/${business.slug}`} class="group">
-				<article
-					class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100 hover:border-gray-200 hover:-translate-y-1"
-				>
-					<h2
-						class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors"
-					>
-						{business.name}
-					</h2>
-					<div class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm mb-3">
-						{business.category}
-					</div>
-					<div class="text-gray-600">
-						{business.address}
-					</div>
-				</article>
-			</a>
-		{/each}
+<!-- Cities Section -->
+<section class="cities-section">
+	<div class="mx-auto max-w-6xl px-4 py-12">
+		<h2 class="mb-8 text-center text-3xl font-bold">{config.locationSectionTitle}</h2>
+
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+			{#each data.cities as city}
+				<CompactCard
+					label={`${city.locality}, ${city.regionShort}`}
+					href="/{slugify(city.region)}/{slugify(city.locality)}"
+				/>
+			{/each}
+		</div>
 	</div>
 </section>
