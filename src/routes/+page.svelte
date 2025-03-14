@@ -27,13 +27,13 @@
 	<div class="mx-auto max-w-6xl px-4 py-12">
 		<h2 class="mb-8 text-center text-3xl font-bold">{config.locationSectionTitle}</h2>
 
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{#each data.cities as city}
 				<a
-					href="/{slugify(city.locality)}"
+					href="/{slugify(city.region)}/{slugify(city.locality)}"
 					class="block rounded-md bg-primary/10 p-6 text-center font-medium text-primary transition-colors hover:bg-primary/20"
 				>
-					{city.locality}, {city.region}
+					{city.locality}, {city.regionShort}
 				</a>
 			{/each}
 		</div>

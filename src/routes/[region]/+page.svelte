@@ -4,6 +4,7 @@
 	import { BusinessCard } from '$lib/components/features/business-card';
 	import { slugify } from '$lib/utils';
 	import BackButton from '$lib/components/ui/back-button.svelte';
+	import { config } from '$lib/config';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -30,6 +31,21 @@
 					class="inline-block rounded-md bg-primary/10 px-4 py-2 font-medium text-primary transition-colors hover:bg-primary/20"
 				>
 					{locality}
+				</a>
+			{/each}
+		</div>
+	</div>
+
+	<!-- Other States/Regions Section -->
+	<div>
+		<h2 class="mb-4 text-2xl font-semibold text-foreground">Browse Other States</h2>
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+			{#each data.otherRegions as region}
+				<a
+					href="/{slugify(region)}"
+					class="block rounded-md bg-primary/10 p-6 text-center font-medium text-primary transition-colors hover:bg-primary/20"
+				>
+					{region}
 				</a>
 			{/each}
 		</div>

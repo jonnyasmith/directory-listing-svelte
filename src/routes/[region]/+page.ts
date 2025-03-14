@@ -33,9 +33,16 @@ export const load: PageLoad = ({ params }) => {
 		...new Set(businessesInRegion.map((business) => business.addressObj.addressLocality))
 	];
 
+	// Get all other regions (excluding the current one)
+	const otherRegions = allRegions.filter((r) => r !== region);
+
+	// Sort other regions alphabetically
+	otherRegions.sort((a, b) => a.localeCompare(b));
+
 	return {
 		region,
 		localities,
+		otherRegions,
 		title: `${region} Local Business Directory`,
 		description: `Browse businesses in ${region}`
 	};

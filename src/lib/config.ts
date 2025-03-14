@@ -39,7 +39,7 @@ export const config: DirectoryConfig = {
 
 	locationSectionTitle: 'Businesses in Popular Cities',
 
-	navLocationLabel: 'Find Businesses By Region',
+	navLocationLabel: 'Find Businesses By State',
 	navAboutLabel: 'About Us',
 
 	seoTitle: 'Local Business Directory - Find Businesses Near You',

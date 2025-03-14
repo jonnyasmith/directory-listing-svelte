@@ -5,10 +5,6 @@
 </script>
 
 <div class="mx-auto max-w-6xl px-4 py-12">
-	<div class="mb-8">
-		<BackButton />
-	</div>
-
 	<div class="flex min-h-[50vh] flex-col items-center justify-center text-center">
 		<div class="rounded-lg bg-muted/30 p-8 shadow-sm">
 			<h1 class="mb-4 text-4xl font-bold text-foreground">
