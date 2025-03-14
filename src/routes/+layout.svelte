@@ -21,24 +21,26 @@
 </svelte:head>
 
 <div class="flex min-h-svh flex-col">
-	<header class="border-b border-border bg-[#10172a]">
+	<header class="bg-header border-b border-border">
 		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
 			<div class="flex items-center">
 				<!-- Logo placeholder - you can replace with actual logo component later -->
 				<a href="{base}/" class="transition-colors hover:text-primary">
-					<div class="text-xl font-bold text-foreground">{config.siteName}</div>
+					<div class="text-header-foreground text-xl font-bold">{config.siteName}</div>
 				</a>
 			</div>
 			<div class="flex items-center space-x-8">
 				<nav>
 					<ul class="flex space-x-8">
 						<li>
-							<a href="{base}/by-region" class="font-medium text-foreground hover:text-primary"
+							<a
+								href="{base}/by-region"
+								class="text-header-foreground font-medium hover:text-primary"
 								>{config.navLocationLabel}</a
 							>
 						</li>
 						<li>
-							<a href="{base}/about" class="font-medium text-foreground hover:text-primary"
+							<a href="{base}/about" class="text-header-foreground font-medium hover:text-primary"
 								>{config.navAboutLabel}</a
 							>
 						</li>
@@ -52,7 +54,7 @@
 		<slot />
 	</main>
 
-	<footer class="bg-[#10172a] text-foreground">
+	<footer class="bg-header text-header-foreground">
 		<div class="mx-auto max-w-7xl px-4 py-6">
 			<p class="text-center">© {new Date().getFullYear()} {config.siteName}</p>
 		</div>

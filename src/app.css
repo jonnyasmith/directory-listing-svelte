@@ -24,6 +24,8 @@
 		--destructive-foreground: 0 0% 98%;
 		--ring: 195 71% 48%;
 		--radius: 0.5rem;
+		--header-background: 215 43% 12%; /* #10172a - Darker navy for header/footer */
+		--header-foreground: 0 0% 98%; /* White text for header/footer */
 		--sidebar-background: 215 35% 15%;
 		--sidebar-foreground: 0 0% 98%;
 		--sidebar-primary: 195 71% 48%;
@@ -54,6 +56,8 @@
 		--destructive: 0 62.8% 30.6%;
 		--destructive-foreground: 0 0% 98%;
 		--ring: 195 71% 48%;
+		--header-background: 215 43% 12%; /* #10172a - Darker navy for header/footer */
+		--header-foreground: 0 0% 98%; /* White text for header/footer */
 		--sidebar-background: 215 35% 15%;
 		--sidebar-foreground: 0 0% 98%;
 		--sidebar-primary: 195 71% 48%;
