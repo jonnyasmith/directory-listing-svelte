@@ -13,9 +13,14 @@
 </script>
 
 <a {href} class="block">
-	<Card class={cn('h-full transition-all hover:shadow-md', 'border border-border')}>
+	<Card
+		class={cn(
+			'h-full transition-all duration-300',
+			'hover:-translate-y-1 hover:border-primary hover:shadow-xl'
+		)}
+	>
 		<CardHeader class="px-6 pb-2 pt-6">
-			<CardTitle class="text-xl">{title}</CardTitle>
+			<CardTitle class="text-xl transition-colors hover:text-primary">{title}</CardTitle>
 		</CardHeader>
 		<CardContent class="px-6 pb-6">
 			<p class="text-sm text-muted-foreground">{subtitle}</p>

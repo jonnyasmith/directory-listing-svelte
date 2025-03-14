@@ -14,7 +14,8 @@
 	<Card
 		class={cn(
 			'rounded-md border-0 p-0 shadow-none',
-			'bg-primary/10 font-medium text-primary transition-colors hover:bg-primary/20'
+			'bg-primary/10 font-medium text-primary transition-all duration-300',
+			'hover:-translate-y-1 hover:bg-primary/20 hover:shadow-md'
 		)}
 	>
 		<CardContent class="p-6 text-center">
