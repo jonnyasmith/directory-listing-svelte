@@ -40,7 +40,6 @@
 
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import { base } from '$app/paths';
 
 	let {
 		class: className,
@@ -55,12 +54,7 @@
 </script>
 
 {#if href}
-	<a
-		bind:this={ref}
-		class={cn(buttonVariants({ variant, size }), className)}
-		href={`${base}${href}`}
-		{...restProps}
-	>
+	<a bind:this={ref} class={cn(buttonVariants({ variant, size }), className)} {href} {...restProps}>
 		{@render children?.()}
 	</a>
 {:else}

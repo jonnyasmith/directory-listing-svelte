@@ -1,6 +1,5 @@
 <script>
-	import { page } from '$app/stores';
-	import { base } from '$app/paths';
+	import { page } from '$app/state';
 	import BackButton from '$lib/components/ui/back-button.svelte';
 </script>
 
@@ -8,7 +7,7 @@
 	<div class="flex min-h-[50vh] flex-col items-center justify-center text-center">
 		<div class="rounded-lg bg-muted/30 p-8 shadow-sm">
 			<h1 class="mb-4 text-4xl font-bold text-foreground">
-				{$page.status}: {$page.error?.message || 'Page not found'}
+				{page.status}: {page.error?.message || 'Page not found'}
 			</h1>
 
 			<p class="mb-8 text-xl text-muted-foreground">
@@ -16,7 +15,7 @@
 			</p>
 
 			<a
-				href="{base}/"
+				href="/"
 				class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
 			>
 				<svg

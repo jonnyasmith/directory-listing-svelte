@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
-	import { base } from '$app/paths';
 
 	export type PropTypes = {
 		label: string;
@@ -9,13 +8,9 @@
 	};
 
 	let { label, href }: PropTypes = $props();
-
-	// When href is just "/", we only want to use the base path
-	// For all other hrefs, append them to the base path
-	const finalHref = base ? `${base}${href}` : href;
 </script>
 
-<a href={finalHref} class="block">
+<a {href} class="block">
 	<Card
 		class={cn(
 			'rounded-md border-0 p-0 shadow-none',

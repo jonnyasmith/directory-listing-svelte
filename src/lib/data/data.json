@@ -1,0 +1,1210 @@
+[
+	{
+		"id": 1,
+		"name": "Joe's Coffee",
+		"slug": "joes-coffee",
+		"category": "Cafe",
+		"address": "123 Main St, Springfield, Illinois 62701",
+		"addressObj": {
+			"streetAddress": "123 Main St",
+			"addressLocality": "Springfield",
+			"addressLocalitySlug": "springfield",
+			"addressRegion": "Illinois",
+			"addressRegionSlug": "illinois",
+			"addressRegionShort": "IL",
+			"postalCode": "62701",
+			"addressCountry": "US"
+		},
+		"phone": "555-1234",
+		"website": "https://joescoffee.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "19:00"
+		}
+	},
+	{
+		"id": 2,
+		"name": "Tech Store",
+		"slug": "tech-store",
+		"category": "Retail",
+		"address": "456 Oak Ave, Springfield, Illinois 62702",
+		"addressObj": {
+			"streetAddress": "456 Oak Ave",
+			"addressLocality": "Springfield",
+			"addressLocalitySlug": "springfield",
+			"addressRegion": "Illinois",
+			"addressRegionSlug": "illinois",
+			"addressRegionShort": "IL",
+			"postalCode": "62702",
+			"addressCountry": "US"
+		},
+		"phone": "555-5678",
+		"website": "https://techstore.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "10:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 3,
+		"name": "Green Gym",
+		"slug": "green-gym",
+		"category": "Fitness",
+		"address": "789 Pine Rd, Springfield, Illinois 62703",
+		"addressObj": {
+			"streetAddress": "789 Pine Rd",
+			"addressLocality": "Springfield",
+			"addressLocalitySlug": "springfield",
+			"addressRegion": "Illinois",
+			"addressRegionSlug": "illinois",
+			"addressRegionShort": "IL",
+			"postalCode": "62703",
+			"addressCountry": "US"
+		},
+		"phone": "555-9012",
+		"website": "https://greengym.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "06:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 4,
+		"name": "Windy City Pizza",
+		"slug": "windy-city-pizza",
+		"category": "Restaurant",
+		"address": "234 Michigan Ave, Chicago, Illinois 60601",
+		"addressObj": {
+			"streetAddress": "234 Michigan Ave",
+			"addressLocality": "Chicago",
+			"addressLocalitySlug": "chicago",
+			"addressRegion": "Illinois",
+			"addressRegionSlug": "illinois",
+			"addressRegionShort": "IL",
+			"postalCode": "60601",
+			"addressCountry": "US"
+		},
+		"phone": "555-2345",
+		"website": "https://windycitypizza.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "11:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 5,
+		"name": "Sunset Yoga Studio",
+		"slug": "sunset-yoga-studio",
+		"category": "Fitness",
+		"address": "567 Sunset Blvd, Los Angeles, California 90028",
+		"addressObj": {
+			"streetAddress": "567 Sunset Blvd",
+			"addressLocality": "Los Angeles",
+			"addressLocalitySlug": "los-angeles",
+			"addressRegion": "California",
+			"addressRegionSlug": "california",
+			"addressRegionShort": "CA",
+			"postalCode": "90028",
+			"addressCountry": "US"
+		},
+		"phone": "555-3456",
+		"website": "https://sunsetyoga.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 6,
+		"name": "Golden Gate Books",
+		"slug": "golden-gate-books",
+		"category": "Retail",
+		"address": "890 Market St, San Francisco, California 94102",
+		"addressObj": {
+			"streetAddress": "890 Market St",
+			"addressLocality": "San Francisco",
+			"addressLocalitySlug": "san-francisco",
+			"addressRegion": "California",
+			"addressRegionSlug": "california",
+			"addressRegionShort": "CA",
+			"postalCode": "94102",
+			"addressCountry": "US"
+		},
+		"phone": "555-4567",
+		"website": "https://goldengatebooks.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 7,
+		"name": "Central Park Cafe",
+		"slug": "central-park-cafe",
+		"category": "Cafe",
+		"address": "123 Fifth Ave, New York, New York 10001",
+		"addressObj": {
+			"streetAddress": "123 Fifth Ave",
+			"addressLocality": "New York",
+			"addressLocalitySlug": "new-york",
+			"addressRegion": "New York",
+			"addressRegionSlug": "new-york",
+			"addressRegionShort": "NY",
+			"postalCode": "10001",
+			"addressCountry": "US"
+		},
+		"phone": "555-5678",
+		"website": "https://centralparkcafe.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "07:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 8,
+		"name": "Niagara Fitness Center",
+		"slug": "niagara-fitness-center",
+		"category": "Fitness",
+		"address": "456 Main St, Buffalo, New York 14202",
+		"addressObj": {
+			"streetAddress": "456 Main St",
+			"addressLocality": "Buffalo",
+			"addressLocalitySlug": "buffalo",
+			"addressRegion": "New York",
+			"addressRegionSlug": "new-york",
+			"addressRegionShort": "NY",
+			"postalCode": "14202",
+			"addressCountry": "US"
+		},
+		"phone": "555-6789",
+		"website": "https://niagarafitness.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "05:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 9,
+		"name": "Space City Tech",
+		"slug": "space-city-tech",
+		"category": "Retail",
+		"address": "789 Texas Ave, Houston, Texas 77002",
+		"addressObj": {
+			"streetAddress": "789 Texas Ave",
+			"addressLocality": "Houston",
+			"addressLocalitySlug": "houston",
+			"addressRegion": "Texas",
+			"addressRegionSlug": "texas",
+			"postalCode": "77002",
+			"addressCountry": "US"
+		},
+		"phone": "555-7890",
+		"website": "https://spacecitytech.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "10:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 10,
+		"name": "Live Music Bar",
+		"slug": "live-music-bar",
+		"category": "Entertainment",
+		"address": "321 Sixth St, Austin, Texas 78701",
+		"addressObj": {
+			"streetAddress": "321 Sixth St",
+			"addressLocality": "Austin",
+			"addressLocalitySlug": "austin",
+			"addressRegion": "Texas",
+			"addressRegionSlug": "texas",
+			"postalCode": "78701",
+			"addressCountry": "US"
+		},
+		"phone": "555-8901",
+		"website": "https://livemusicbar.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "16:00",
+			"closes": "02:00"
+		}
+	},
+	{
+		"id": 11,
+		"name": "Beach Yoga Studio",
+		"slug": "beach-yoga-studio",
+		"category": "Fitness",
+		"address": "123 Ocean Dr, Miami, Florida 33139",
+		"addressObj": {
+			"streetAddress": "123 Ocean Dr",
+			"addressLocality": "Miami",
+			"addressLocalitySlug": "miami",
+			"addressRegion": "Florida",
+			"addressRegionSlug": "florida",
+			"postalCode": "33139",
+			"addressCountry": "US"
+		},
+		"phone": "555-9012",
+		"website": "https://beachyoga.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "06:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 12,
+		"name": "Theme Park Souvenirs",
+		"slug": "theme-park-souvenirs",
+		"category": "Retail",
+		"address": "456 International Dr, Orlando, Florida 32819",
+		"addressObj": {
+			"streetAddress": "456 International Dr",
+			"addressLocality": "Orlando",
+			"addressLocalitySlug": "orlando",
+			"addressRegion": "Florida",
+			"addressRegionSlug": "florida",
+			"postalCode": "32819",
+			"addressCountry": "US"
+		},
+		"phone": "555-0123",
+		"website": "https://themeparksouvenirs.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "09:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 13,
+		"name": "Rain City Coffee",
+		"slug": "rain-city-coffee",
+		"category": "Cafe",
+		"address": "789 Pike St, Seattle, Washington 98101",
+		"addressObj": {
+			"streetAddress": "789 Pike St",
+			"addressLocality": "Seattle",
+			"addressLocalitySlug": "seattle",
+			"addressRegion": "Washington",
+			"addressRegionSlug": "washington",
+			"postalCode": "98101",
+			"addressCountry": "US"
+		},
+		"phone": "555-1234",
+		"website": "https://raincitycoffee.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 14,
+		"name": "Riverfront Restaurant",
+		"slug": "riverfront-restaurant",
+		"category": "Restaurant",
+		"address": "321 Riverfront Ave, Spokane, Washington 99201",
+		"addressObj": {
+			"streetAddress": "321 Riverfront Ave",
+			"addressLocality": "Spokane",
+			"addressLocalitySlug": "spokane",
+			"addressRegion": "Washington",
+			"addressRegionSlug": "washington",
+			"postalCode": "99201",
+			"addressCountry": "US"
+		},
+		"phone": "555-2345",
+		"website": "https://riverfrontrestaurant.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "11:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 15,
+		"name": "Mountain Sports Shop",
+		"slug": "mountain-sports-shop",
+		"category": "Retail",
+		"address": "123 Larimer St, Denver, Colorado 80202",
+		"addressObj": {
+			"streetAddress": "123 Larimer St",
+			"addressLocality": "Denver",
+			"addressLocalitySlug": "denver",
+			"addressRegion": "Colorado",
+			"addressRegionSlug": "colorado",
+			"postalCode": "80202",
+			"addressCountry": "US"
+		},
+		"phone": "555-3456",
+		"website": "https://mountainsports.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 16,
+		"name": "Boulder Yoga Center",
+		"slug": "boulder-yoga-center",
+		"category": "Fitness",
+		"address": "456 Pearl St, Boulder, Colorado 80302",
+		"addressObj": {
+			"streetAddress": "456 Pearl St",
+			"addressLocality": "Boulder",
+			"addressLocalitySlug": "boulder",
+			"addressRegion": "Colorado",
+			"addressRegionSlug": "colorado",
+			"postalCode": "80302",
+			"addressCountry": "US"
+		},
+		"phone": "555-4567",
+		"website": "https://boulderyoga.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 17,
+		"name": "Desert Cafe",
+		"slug": "desert-cafe",
+		"category": "Cafe",
+		"address": "789 Central Ave, Phoenix, Arizona 85004",
+		"addressObj": {
+			"streetAddress": "789 Central Ave",
+			"addressLocality": "Phoenix",
+			"addressLocalitySlug": "phoenix",
+			"addressRegion": "Arizona",
+			"addressRegionSlug": "arizona",
+			"postalCode": "85004",
+			"addressCountry": "US"
+		},
+		"phone": "555-5678",
+		"website": "https://desertcafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 18,
+		"name": "Sonoran Restaurant",
+		"slug": "sonoran-restaurant",
+		"category": "Restaurant",
+		"address": "321 Congress St, Tucson, Arizona 85701",
+		"addressObj": {
+			"streetAddress": "321 Congress St",
+			"addressLocality": "Tucson",
+			"addressLocalitySlug": "tucson",
+			"addressRegion": "Arizona",
+			"addressRegionSlug": "arizona",
+			"postalCode": "85701",
+			"addressCountry": "US"
+		},
+		"phone": "555-6789",
+		"website": "https://sonoranrestaurant.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "11:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 19,
+		"name": "Portland Bookstore",
+		"slug": "portland-bookstore",
+		"category": "Retail",
+		"address": "123 Burnside St, Portland, Oregon 97209",
+		"addressObj": {
+			"streetAddress": "123 Burnside St",
+			"addressLocality": "Portland",
+			"addressLocalitySlug": "portland",
+			"addressRegion": "Oregon",
+			"addressRegionSlug": "oregon",
+			"postalCode": "97209",
+			"addressCountry": "US"
+		},
+		"phone": "555-7890",
+		"website": "https://portlandbookstore.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 20,
+		"name": "Eugene Fitness Center",
+		"slug": "eugene-fitness-center",
+		"category": "Fitness",
+		"address": "456 Willamette St, Eugene, Oregon 97401",
+		"addressObj": {
+			"streetAddress": "456 Willamette St",
+			"addressLocality": "Eugene",
+			"addressLocalitySlug": "eugene",
+			"addressRegion": "Oregon",
+			"addressRegionSlug": "oregon",
+			"postalCode": "97401",
+			"addressCountry": "US"
+		},
+		"phone": "555-8901",
+		"website": "https://eugenefitness.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "05:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 21,
+		"name": "Strip Entertainment",
+		"slug": "strip-entertainment",
+		"category": "Entertainment",
+		"address": "789 Las Vegas Blvd, Las Vegas, Nevada 89109",
+		"addressObj": {
+			"streetAddress": "789 Las Vegas Blvd",
+			"addressLocality": "Las Vegas",
+			"addressLocalitySlug": "las-vegas",
+			"addressRegion": "Nevada",
+			"addressRegionSlug": "nevada",
+			"postalCode": "89109",
+			"addressCountry": "US"
+		},
+		"phone": "555-9012",
+		"website": "https://stripentertainment.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "20:00",
+			"closes": "04:00"
+		}
+	},
+	{
+		"id": 22,
+		"name": "Reno Sports Bar",
+		"slug": "reno-sports-bar",
+		"category": "Entertainment",
+		"address": "321 Virginia St, Reno, Nevada 89501",
+		"addressObj": {
+			"streetAddress": "321 Virginia St",
+			"addressLocality": "Reno",
+			"addressLocalitySlug": "reno",
+			"addressRegion": "Nevada",
+			"addressRegionSlug": "nevada",
+			"postalCode": "89501",
+			"addressCountry": "US"
+		},
+		"phone": "555-0123",
+		"website": "https://renosportsbar.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "11:00",
+			"closes": "02:00"
+		}
+	},
+	{
+		"id": 23,
+		"name": "Mountain View Cafe",
+		"slug": "mountain-view-cafe",
+		"category": "Cafe",
+		"address": "123 State St, Salt Lake City, Utah 84111",
+		"addressObj": {
+			"streetAddress": "123 State St",
+			"addressLocality": "Salt Lake City",
+			"addressLocalitySlug": "salt-lake-city",
+			"addressRegion": "Utah",
+			"addressRegionSlug": "utah",
+			"postalCode": "84111",
+			"addressCountry": "US"
+		},
+		"phone": "555-1234",
+		"website": "https://mountainviewcafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "19:00"
+		}
+	},
+	{
+		"id": 24,
+		"name": "Provo Tech Store",
+		"slug": "provo-tech-store",
+		"category": "Retail",
+		"address": "456 Center St, Provo, Utah 84601",
+		"addressObj": {
+			"streetAddress": "456 Center St",
+			"addressLocality": "Provo",
+			"addressLocalitySlug": "provo",
+			"addressRegion": "Utah",
+			"addressRegionSlug": "utah",
+			"postalCode": "84601",
+			"addressCountry": "US"
+		},
+		"phone": "555-2345",
+		"website": "https://provotech.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "10:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 25,
+		"name": "Boise Fitness Center",
+		"slug": "boise-fitness-center",
+		"category": "Fitness",
+		"address": "789 Main St, Boise, Idaho 83702",
+		"addressObj": {
+			"streetAddress": "789 Main St",
+			"addressLocality": "Boise",
+			"addressLocalitySlug": "boise",
+			"addressRegion": "Idaho",
+			"addressRegionSlug": "idaho",
+			"postalCode": "83702",
+			"addressCountry": "US"
+		},
+		"phone": "555-3456",
+		"website": "https://boisefitness.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "05:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 26,
+		"name": "Falls Cafe",
+		"slug": "falls-cafe",
+		"category": "Cafe",
+		"address": "321 Broadway St, Idaho Falls, Idaho 83402",
+		"addressObj": {
+			"streetAddress": "321 Broadway St",
+			"addressLocality": "Idaho Falls",
+			"addressLocalitySlug": "idaho-falls",
+			"addressRegion": "Idaho",
+			"addressRegionSlug": "idaho",
+			"postalCode": "83402",
+			"addressCountry": "US"
+		},
+		"phone": "555-4567",
+		"website": "https://fallscafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 27,
+		"name": "Billings Bookstore",
+		"slug": "billings-bookstore",
+		"category": "Retail",
+		"address": "123 Montana Ave, Billings, Montana 59101",
+		"addressObj": {
+			"streetAddress": "123 Montana Ave",
+			"addressLocality": "Billings",
+			"addressLocalitySlug": "billings",
+			"addressRegion": "Montana",
+			"addressRegionSlug": "montana",
+			"postalCode": "59101",
+			"addressCountry": "US"
+		},
+		"phone": "555-5678",
+		"website": "https://billingsbookstore.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 28,
+		"name": "Missoula Yoga Studio",
+		"slug": "missoula-yoga-studio",
+		"category": "Fitness",
+		"address": "456 Higgins Ave, Missoula, Montana 59802",
+		"addressObj": {
+			"streetAddress": "456 Higgins Ave",
+			"addressLocality": "Missoula",
+			"addressLocalitySlug": "missoula",
+			"addressRegion": "Montana",
+			"addressRegionSlug": "montana",
+			"postalCode": "59802",
+			"addressCountry": "US"
+		},
+		"phone": "555-6789",
+		"website": "https://missoulayoga.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 29,
+		"name": "Cheyenne Restaurant",
+		"slug": "cheyenne-restaurant",
+		"category": "Restaurant",
+		"address": "789 Lincolnway, Cheyenne, Wyoming 82001",
+		"addressObj": {
+			"streetAddress": "789 Lincolnway",
+			"addressLocality": "Cheyenne",
+			"addressLocalitySlug": "cheyenne",
+			"addressRegion": "Wyoming",
+			"addressRegionSlug": "wyoming",
+			"postalCode": "82001",
+			"addressCountry": "US"
+		},
+		"phone": "555-7890",
+		"website": "https://cheyennerestaurant.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "11:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 30,
+		"name": "Casper Sports Shop",
+		"slug": "casper-sports-shop",
+		"category": "Retail",
+		"address": "321 Center St, Casper, Wyoming 82601",
+		"addressObj": {
+			"streetAddress": "321 Center St",
+			"addressLocality": "Casper",
+			"addressLocalitySlug": "casper",
+			"addressRegion": "Wyoming",
+			"addressRegionSlug": "wyoming",
+			"postalCode": "82601",
+			"addressCountry": "US"
+		},
+		"phone": "555-8901",
+		"website": "https://caspersports.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 31,
+		"name": "Albuquerque Cafe",
+		"slug": "albuquerque-cafe",
+		"category": "Cafe",
+		"address": "123 Central Ave, Albuquerque, New Mexico 87102",
+		"addressObj": {
+			"streetAddress": "123 Central Ave",
+			"addressLocality": "Albuquerque",
+			"addressLocalitySlug": "albuquerque",
+			"addressRegion": "New Mexico",
+			"addressRegionSlug": "new-mexico",
+			"postalCode": "87102",
+			"addressCountry": "US"
+		},
+		"phone": "555-9012",
+		"website": "https://albuquerquecafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 32,
+		"name": "Santa Fe Art Gallery",
+		"slug": "santa-fe-art-gallery",
+		"category": "Retail",
+		"address": "456 Canyon Rd, Santa Fe, New Mexico 87501",
+		"addressObj": {
+			"streetAddress": "456 Canyon Rd",
+			"addressLocality": "Santa Fe",
+			"addressLocalitySlug": "santa-fe",
+			"addressRegion": "New Mexico",
+			"addressRegionSlug": "new-mexico",
+			"postalCode": "87501",
+			"addressCountry": "US"
+		},
+		"phone": "555-0123",
+		"website": "https://santafeart.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "10:00",
+			"closes": "18:00"
+		}
+	},
+	{
+		"id": 33,
+		"name": "OKC Fitness Center",
+		"slug": "okc-fitness-center",
+		"category": "Fitness",
+		"address": "789 Broadway Ave, Oklahoma City, Oklahoma 73102",
+		"addressObj": {
+			"streetAddress": "789 Broadway Ave",
+			"addressLocality": "Oklahoma City",
+			"addressLocalitySlug": "oklahoma-city",
+			"addressRegion": "Oklahoma",
+			"addressRegionSlug": "oklahoma",
+			"postalCode": "73102",
+			"addressCountry": "US"
+		},
+		"phone": "555-1234",
+		"website": "https://okcfitness.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "05:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 34,
+		"name": "Tulsa Tech Store",
+		"slug": "tulsa-tech-store",
+		"category": "Retail",
+		"address": "321 Main St, Tulsa, Oklahoma 74103",
+		"addressObj": {
+			"streetAddress": "321 Main St",
+			"addressLocality": "Tulsa",
+			"addressLocalitySlug": "tulsa",
+			"addressRegion": "Oklahoma",
+			"addressRegionSlug": "oklahoma",
+			"postalCode": "74103",
+			"addressCountry": "US"
+		},
+		"phone": "555-2345",
+		"website": "https://tulsatech.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "10:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 35,
+		"name": "Wichita Coffee House",
+		"slug": "wichita-coffee-house",
+		"category": "Cafe",
+		"address": "123 Douglas Ave, Wichita, Kansas 67202",
+		"addressObj": {
+			"streetAddress": "123 Douglas Ave",
+			"addressLocality": "Wichita",
+			"addressLocalitySlug": "wichita",
+			"addressRegion": "Kansas",
+			"addressRegionSlug": "kansas",
+			"postalCode": "67202",
+			"addressCountry": "US"
+		},
+		"phone": "555-3456",
+		"website": "https://wichitacoffee.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 36,
+		"name": "Overland Park Restaurant",
+		"slug": "overland-park-restaurant",
+		"category": "Restaurant",
+		"address": "456 Metcalf Ave, Overland Park, Kansas 66212",
+		"addressObj": {
+			"streetAddress": "456 Metcalf Ave",
+			"addressLocality": "Overland Park",
+			"addressLocalitySlug": "overland-park",
+			"addressRegion": "Kansas",
+			"addressRegionSlug": "kansas",
+			"postalCode": "66212",
+			"addressCountry": "US"
+		},
+		"phone": "555-4567",
+		"website": "https://overlandparkrestaurant.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "11:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 37,
+		"name": "Omaha Bookstore",
+		"slug": "omaha-bookstore",
+		"category": "Retail",
+		"address": "789 Dodge St, Omaha, Nebraska 68102",
+		"addressObj": {
+			"streetAddress": "789 Dodge St",
+			"addressLocality": "Omaha",
+			"addressLocalitySlug": "omaha",
+			"addressRegion": "Nebraska",
+			"addressRegionSlug": "nebraska",
+			"postalCode": "68102",
+			"addressCountry": "US"
+		},
+		"phone": "555-5678",
+		"website": "https://omahabookstore.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 38,
+		"name": "Lincoln Yoga Studio",
+		"slug": "lincoln-yoga-studio",
+		"category": "Fitness",
+		"address": "321 O St, Lincoln, Nebraska 68508",
+		"addressObj": {
+			"streetAddress": "321 O St",
+			"addressLocality": "Lincoln",
+			"addressLocalitySlug": "lincoln",
+			"addressRegion": "Nebraska",
+			"addressRegionSlug": "nebraska",
+			"postalCode": "68508",
+			"addressCountry": "US"
+		},
+		"phone": "555-6789",
+		"website": "https://lincolnyoga.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 39,
+		"name": "Des Moines Cafe",
+		"slug": "des-moines-cafe",
+		"category": "Cafe",
+		"address": "123 Grand Ave, Des Moines, Iowa 50309",
+		"addressObj": {
+			"streetAddress": "123 Grand Ave",
+			"addressLocality": "Des Moines",
+			"addressLocalitySlug": "des-moines",
+			"addressRegion": "Iowa",
+			"addressRegionSlug": "iowa",
+			"postalCode": "50309",
+			"addressCountry": "US"
+		},
+		"phone": "555-7890",
+		"website": "https://desmoinescafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 40,
+		"name": "Cedar Rapids Tech Store",
+		"slug": "cedar-rapids-tech-store",
+		"category": "Retail",
+		"address": "456 First Ave, Cedar Rapids, Iowa 52401",
+		"addressObj": {
+			"streetAddress": "456 First Ave",
+			"addressLocality": "Cedar Rapids",
+			"addressLocalitySlug": "cedar-rapids",
+			"addressRegion": "Iowa",
+			"addressRegionSlug": "iowa",
+			"postalCode": "52401",
+			"addressCountry": "US"
+		},
+		"phone": "555-8901",
+		"website": "https://cedarrapidstech.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "10:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 41,
+		"name": "KC Jazz Club",
+		"slug": "kc-jazz-club",
+		"category": "Entertainment",
+		"address": "789 18th St, Kansas City, Missouri 64108",
+		"addressObj": {
+			"streetAddress": "789 18th St",
+			"addressLocality": "Kansas City",
+			"addressLocalitySlug": "kansas-city",
+			"addressRegion": "Missouri",
+			"addressRegionSlug": "missouri",
+			"postalCode": "64108",
+			"addressCountry": "US"
+		},
+		"phone": "555-9012",
+		"website": "https://kcjazz.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "19:00",
+			"closes": "02:00"
+		}
+	},
+	{
+		"id": 42,
+		"name": "St. Louis Fitness Center",
+		"slug": "st-louis-fitness-center",
+		"category": "Fitness",
+		"address": "321 Market St, St. Louis, Missouri 63102",
+		"addressObj": {
+			"streetAddress": "321 Market St",
+			"addressLocality": "St. Louis",
+			"addressLocalitySlug": "st-louis",
+			"addressRegion": "Missouri",
+			"addressRegionSlug": "missouri",
+			"postalCode": "63102",
+			"addressCountry": "US"
+		},
+		"phone": "555-0123",
+		"website": "https://stlouisfitness.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "05:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 43,
+		"name": "Little Rock Bookstore",
+		"slug": "little-rock-bookstore",
+		"category": "Retail",
+		"address": "123 Main St, Little Rock, Arkansas 72201",
+		"addressObj": {
+			"streetAddress": "123 Main St",
+			"addressLocality": "Little Rock",
+			"addressLocalitySlug": "little-rock",
+			"addressRegion": "Arkansas",
+			"addressRegionSlug": "arkansas",
+			"postalCode": "72201",
+			"addressCountry": "US"
+		},
+		"phone": "555-1234",
+		"website": "https://littlerockbookstore.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "09:00",
+			"closes": "21:00"
+		}
+	},
+	{
+		"id": 44,
+		"name": "Fayetteville Cafe",
+		"slug": "fayetteville-cafe",
+		"category": "Cafe",
+		"address": "456 Dickson St, Fayetteville, Arkansas 72701",
+		"addressObj": {
+			"streetAddress": "456 Dickson St",
+			"addressLocality": "Fayetteville",
+			"addressLocalitySlug": "fayetteville",
+			"addressRegion": "Arkansas",
+			"addressRegionSlug": "arkansas",
+			"postalCode": "72701",
+			"addressCountry": "US"
+		},
+		"phone": "555-2345",
+		"website": "https://fayettevillecafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 45,
+		"name": "French Quarter Restaurant",
+		"slug": "french-quarter-restaurant",
+		"category": "Restaurant",
+		"address": "789 Bourbon St, New Orleans, Louisiana 70116",
+		"addressObj": {
+			"streetAddress": "789 Bourbon St",
+			"addressLocality": "New Orleans",
+			"addressLocalitySlug": "new-orleans",
+			"addressRegion": "Louisiana",
+			"addressRegionSlug": "louisiana",
+			"postalCode": "70116",
+			"addressCountry": "US"
+		},
+		"phone": "555-3456",
+		"website": "https://frenchquarterrestaurant.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "11:00",
+			"closes": "23:00"
+		}
+	},
+	{
+		"id": 46,
+		"name": "Baton Rouge Fitness",
+		"slug": "baton-rouge-fitness",
+		"category": "Fitness",
+		"address": "321 Third St, Baton Rouge, Louisiana 70801",
+		"addressObj": {
+			"streetAddress": "321 Third St",
+			"addressLocality": "Baton Rouge",
+			"addressLocalitySlug": "baton-rouge",
+			"addressRegion": "Louisiana",
+			"addressRegionSlug": "louisiana",
+			"postalCode": "70801",
+			"addressCountry": "US"
+		},
+		"phone": "555-4567",
+		"website": "https://batonrougefitness.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "05:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 47,
+		"name": "Jackson Tech Store",
+		"slug": "jackson-tech-store",
+		"category": "Retail",
+		"address": "123 Capitol St, Jackson, Mississippi 39201",
+		"addressObj": {
+			"streetAddress": "123 Capitol St",
+			"addressLocality": "Jackson",
+			"addressLocalitySlug": "jackson",
+			"addressRegion": "Mississippi",
+			"addressRegionSlug": "mississippi",
+			"postalCode": "39201",
+			"addressCountry": "US"
+		},
+		"phone": "555-5678",
+		"website": "https://jacksontech.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "10:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 48,
+		"name": "Gulfport Cafe",
+		"slug": "gulfport-cafe",
+		"category": "Cafe",
+		"address": "456 Beach Blvd, Gulfport, Mississippi 39501",
+		"addressObj": {
+			"streetAddress": "456 Beach Blvd",
+			"addressLocality": "Gulfport",
+			"addressLocalitySlug": "gulfport",
+			"addressRegion": "Mississippi",
+			"addressRegionSlug": "mississippi",
+			"postalCode": "39501",
+			"addressCountry": "US"
+		},
+		"phone": "555-6789",
+		"website": "https://gulfportcafe.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"opens": "06:00",
+			"closes": "22:00"
+		}
+	},
+	{
+		"id": 49,
+		"name": "Birmingham Yoga Studio",
+		"slug": "birmingham-yoga-studio",
+		"category": "Fitness",
+		"address": "789 20th St, Birmingham, Alabama 35203",
+		"addressObj": {
+			"streetAddress": "789 20th St",
+			"addressLocality": "Birmingham",
+			"addressLocalitySlug": "birmingham",
+			"addressRegion": "Alabama",
+			"addressRegionSlug": "alabama",
+			"postalCode": "35203",
+			"addressCountry": "US"
+		},
+		"phone": "555-7890",
+		"website": "https://birminghamyoga.example.com",
+		"priceRange": "$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "07:00",
+			"closes": "20:00"
+		}
+	},
+	{
+		"id": 50,
+		"name": "Mobile Restaurant",
+		"slug": "mobile-restaurant",
+		"category": "Restaurant",
+		"address": "321 Dauphin St, Mobile, Alabama 36602",
+		"addressObj": {
+			"streetAddress": "321 Dauphin St",
+			"addressLocality": "Mobile",
+			"addressLocalitySlug": "mobile",
+			"addressRegion": "Alabama",
+			"addressRegionSlug": "alabama",
+			"postalCode": "36602",
+			"addressCountry": "US"
+		},
+		"phone": "555-8901",
+		"website": "https://mobilerestaurant.example.com",
+		"priceRange": "$$$",
+		"openingHours": {
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+			"opens": "11:00",
+			"closes": "23:00"
+		}
+	}
+]

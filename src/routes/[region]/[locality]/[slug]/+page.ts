@@ -1,5 +1,5 @@
 import type { EntryGenerator, PageLoad } from './$types';
-import { businesses } from '$lib/data';
+import { businesses } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 
 // Define which slugs should be prerendered

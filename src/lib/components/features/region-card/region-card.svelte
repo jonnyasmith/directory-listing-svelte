@@ -2,7 +2,6 @@
 	import { slugify } from '$lib/utils';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
-	import { base } from '$app/paths';
 
 	export type PropTypes = {
 		name: string;
@@ -16,7 +15,7 @@
 	const href = baseRegion ? `/${slugify(baseRegion)}/${slugify(name)}` : `/${slugify(name)}`;
 </script>
 
-<a href={`${base}${href}`} class="block">
+<a {href} class="block">
 	<Card
 		class={cn(
 			'rounded-md border-0 p-0 shadow-none',

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { type PageData } from './$types';
-	import { businesses } from '$lib/data';
+	import { businesses } from '$lib/data/data';
 	import { BusinessCard } from '$lib/components/features/business-card';
 	import { slugify } from '$lib/utils';
 	import { config } from '$lib/config';
@@ -31,8 +31,8 @@
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{#each data.cities as city}
 				<CompactCard
-					label={`${city.locality}, ${city.regionShort}`}
-					href="/{slugify(city.region)}/{slugify(city.locality)}"
+					label={`${city.name}, ${city.region.shortName}`}
+					href="/{city.region.slug}/{city.slug}"
 				/>
 			{/each}
 		</div>

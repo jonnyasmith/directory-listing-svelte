@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { type PageData } from './$types';
-	import { slugify } from '$lib/utils';
 	import { config } from '$lib/config';
 	import { CompactCard } from '$lib/components/features/compact-card';
 
@@ -17,7 +16,7 @@
 
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 		{#each data.regions as region}
-			<CompactCard label={region} href="/{slugify(region)}" />
+			<CompactCard label={region.region} href="/{region.regionSlug}" />
 		{/each}
 	</div>
 </div>

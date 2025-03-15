@@ -1,16 +1,25 @@
-import { businesses } from '$lib/data';
+import { businesses } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
 import { slugify } from '$lib/utils';
 
+export interface Region {
+	region: string;
+	regionSlug: string;
+}
+
+export interface Locality {
+	locality: string;
+	localitySlug: string;
+}
+
 // Define which slugs should be prerendered
 export const entries: EntryGenerator = () => {
 	// Get all unique regions
-	const regions = [...new Set(businesses.map((business) => business.addressObj.addressRegion))];
+	const regions = [...new Set(businesses.map((business) => business.addressObj.addressRegionSlug))];
 
-	// Return an array of region objects with their slugified paths
 	return regions.map((region) => ({
-		region: slugify(region)
+		region: region
 	}));
 };
 

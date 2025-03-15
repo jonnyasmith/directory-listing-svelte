@@ -1,4 +1,4 @@
-import { businesses } from '$lib/data';
+import { businesses } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
 import { slugify } from '$lib/utils';

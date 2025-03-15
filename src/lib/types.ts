@@ -1,7 +1,9 @@
 export interface Address {
 	streetAddress: string;
 	addressLocality: string; // City
+	addressLocalitySlug: string; // City slug
 	addressRegion: string; // State/Province
+	addressRegionSlug: string; // State/Province
 	addressRegionShort?: string; // State/Province abbreviation (e.g., CA, NY)
 	postalCode?: string;
 	addressCountry?: string;
@@ -22,4 +24,16 @@ export interface Business {
 		closes: string;
 	};
 	priceRange?: string;
+}
+
+export interface Region {
+	name: string;
+	shortName: string;
+	slug: string;
+}
+
+export interface Locality {
+	name: string;
+	slug: string;
+	region: Region;
 }

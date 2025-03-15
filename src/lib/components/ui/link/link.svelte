@@ -1,5 +1,4 @@
 <script lang="ts" module>
-	import { base } from '$app/paths';
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import { type VariantProps, tv } from 'tailwind-variants';
@@ -36,12 +35,8 @@
 		children,
 		...restProps
 	}: LinkProps = $props();
-
-	// When href is just "/", we only want to use the base path
-	// For all other hrefs, append them to the base path
-	const finalHref = href === '/' ? base : `${base}${href}`;
 </script>
 
-<a bind:this={ref} class={cn(linkVariants({ variant }), className)} href={finalHref} {...restProps}>
+<a bind:this={ref} class={cn(linkVariants({ variant }), className)} {href} {...restProps}>
 	{@render children?.()}
 </a>
