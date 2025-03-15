@@ -4,3 +4,6 @@ import { generateLocalBusinessJsonLd } from './local-business-json-ld';
 import { getStateAbbreviation } from './state-abbreviation';
 
 export { cn, slugify, generateLocalBusinessJsonLd, getStateAbbreviation };
+
+export * from './schema';
+export * from './local-business-json-ld';

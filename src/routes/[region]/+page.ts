@@ -1,6 +1,8 @@
 import { regions, localities } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
+import HomeIcon from '@lucide/svelte/icons/home';
+import type { BreadcrumbItem } from '$lib/types';
 
 // Define which slugs should be prerendered
 export const entries: EntryGenerator = () => {
@@ -25,10 +27,17 @@ export const load: PageLoad = ({ params }) => {
 	// Get other regions (excluding the current one)
 	const otherRegions = regions.filter((r) => r.slug !== region.slug);
 
+	// Create breadcrumb data
+	const breadcrumbs: BreadcrumbItem[] = [
+		{ label: 'Home', href: '/', icon: HomeIcon },
+		{ label: region.name, href: `/${region.slug}` }
+	];
+
 	return {
 		region,
 		localities: localitiesInRegion,
 		otherRegions,
+		breadcrumbs,
 		title: `${region.name} Local Business Directory`,
 		description: `Browse businesses in ${region.name}`
 	};

@@ -7,24 +7,79 @@
 	import { ModeWatcher, toggleMode, mode } from 'mode-watcher';
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import MoonIcon from '@lucide/svelte/icons/moon';
+	import { generateOrganizationJsonLd, generateWebsiteJsonLd } from '$lib/utils';
+	import BreadcrumbNav from '$lib/components/features/breadcrumb-nav.svelte';
 
 	function toggleTheme() {
 		toggleMode();
 	}
+
+	let { data } = $props();
+
+	console.log(data);
+
+	// Determine if this is the homepage
+	let isHomepage = $derived(page.url.pathname === '/');
+
+	// Generate structured data
+	let websiteJsonLd = $derived(generateWebsiteJsonLd(page.url.href));
+	let organizationJsonLd = $derived(generateOrganizationJsonLd(page.url.href));
+
+	// Base URL for canonical links - in production this would be your actual domain
+	// For local development, we'll use the current origin
+	let baseUrl = $derived(page.url.origin);
+
+	// Canonical URL (full URL including pathname)
+	let canonicalUrl = $derived(`${baseUrl}${page.url.pathname}`);
+
+	// Social media image URL (you should replace this with your actual image path)
+	let socialImageUrl = $derived(`${baseUrl}/social-share.jpg`);
 </script>
 
 <svelte:head>
+	<!-- Basic Meta Tags -->
 	<title>{page.data.title || config.seoTitle}</title>
 	<meta name="description" content={page.data.description || config.seoDescription} />
+	<meta name="author" content={config.siteName} />
+	<meta name="robots" content="index, follow" />
+	<meta
+		name="keywords"
+		content={`${config.itemPlural}, ${config.itemSingular} directory, local ${config.itemPlural}`}
+	/>
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href={canonicalUrl} />
+
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={page.url.href} />
 	<meta property="og:title" content={page.data.title || config.seoTitle} />
 	<meta property="og:description" content={page.data.description || config.seoDescription} />
+	<meta property="og:image" content={socialImageUrl} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:locale" content="en_US" />
+
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={page.url.href} />
 	<meta name="twitter:title" content={page.data.title || config.seoTitle} />
 	<meta name="twitter:description" content={page.data.description || config.seoDescription} />
+	<meta name="twitter:image" content={socialImageUrl} />
+
+	<!-- Resource Hints -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+	<!-- Alternate Languages -->
+	<link rel="alternate" hreflang="en" href={canonicalUrl} />
+
+	<!-- JSON-LD Structured Data -->
+	{#if isHomepage}
+		{@html `<script type="application/ld+json">${JSON.stringify(websiteJsonLd)}</script>`}
+		{@html `<script type="application/ld+json">${JSON.stringify(organizationJsonLd)}</script>`}
+	{/if}
 </svelte:head>
 
 <ModeWatcher />
@@ -70,7 +125,11 @@
 		</div>
 	</header>
 
-	<main class="w-full flex-1">
+	<div class="bg-background">
+		<BreadcrumbNav />
+	</div>
+
+	<main class="w-full flex-1" id="main-content">
 		<slot />
 	</main>
 

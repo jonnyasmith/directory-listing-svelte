@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Assume sitemap is generated at build time
+Sitemap: https://yourdomain.com/sitemap.xml 

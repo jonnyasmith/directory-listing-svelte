@@ -43,3 +43,17 @@ export interface Locality {
 	slug: string;
 	region: Region;
 }
+
+/**
+ * Represents a breadcrumb item in the navigation trail
+ */
+export interface BreadcrumbItem {
+	/** The display text for the breadcrumb item */
+	label: string;
+
+	/** The URL the breadcrumb item links to */
+	href: string;
+
+	/** Optional icon component to display with the breadcrumb (typically used for Home) */
+	icon?: any; // Using any to accommodate Lucide icon components
+}

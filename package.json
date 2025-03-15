@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"postbuild": "npx svelte-sitemap --domain https://www.pcsnippets.com",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -37,6 +38,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.10",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
+		"svelte-sitemap": "^2.7.0",
 		"svelte-sonner": "^0.3.28",
 		"sveltekit-superforms": "^2.24.0",
 		"tailwind-merge": "^3.0.2",

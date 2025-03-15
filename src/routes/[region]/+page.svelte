@@ -3,9 +3,22 @@
 	import { CompactCard } from '$lib/components/features/compact-card';
 	import { FeatureCard } from '$lib/components/features/feature-card';
 	import { type PageData } from './$types';
+	import { page } from '$app/state';
+	import { generateBreadcrumbJsonLd } from '$lib/utils';
 
 	let { data }: { data: PageData } = $props();
+
+	// Generate breadcrumb data
+	const breadcrumbItems = [
+		{ name: 'Home', url: new URL('/', page.url.href).href },
+		{ name: data.region.name, url: page.url.href }
+	];
+	const breadcrumbJsonLd = JSON.stringify(generateBreadcrumbJsonLd(breadcrumbItems));
 </script>
+
+<svelte:head>
+	{@html `<script type="application/ld+json">${breadcrumbJsonLd}</script>`}
+</svelte:head>
 
 <section class="mx-auto max-w-6xl px-4 py-12">
 	<!-- Header Section -->

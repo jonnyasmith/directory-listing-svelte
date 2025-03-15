@@ -3,11 +3,29 @@
 	import { page } from '$app/state';
 	import { BusinessCard } from '$lib/components/features/business-card';
 	import { CompactCard } from '$lib/components/features/compact-card';
-	import { slugify } from '$lib/utils';
+	import { slugify, generateBreadcrumbJsonLd } from '$lib/utils';
 	import { type PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
+
+	// Generate breadcrumb data
+	const breadcrumbItems = [
+		{ name: 'Home', url: new URL('/', page.url.href).href },
+		{
+			name: data.locality.region.name,
+			url: new URL(`/${data.locality.region.slug}`, page.url.href).href
+		},
+		{
+			name: data.locality.name,
+			url: page.url.href
+		}
+	];
+	const breadcrumbJsonLd = JSON.stringify(generateBreadcrumbJsonLd(breadcrumbItems));
 </script>
+
+<svelte:head>
+	{@html `<script type="application/ld+json">${breadcrumbJsonLd}</script>`}
+</svelte:head>
 
 <section class="mx-auto max-w-6xl px-4 py-12">
 	<div class="mb-12 text-center">
