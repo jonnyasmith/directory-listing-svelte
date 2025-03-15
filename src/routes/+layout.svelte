@@ -9,6 +9,7 @@
 	import MoonIcon from '@lucide/svelte/icons/moon';
 	import { generateOrganizationJsonLd, generateWebsiteJsonLd } from '$lib/utils';
 	import BreadcrumbNav from '$lib/components/features/breadcrumb-nav.svelte';
+	import HomeIcon from '@lucide/svelte/icons/home';
 
 	function toggleTheme() {
 		toggleMode();
@@ -132,4 +133,19 @@
 			<p class="text-center">© {new Date().getFullYear()} {config.siteName}</p>
 		</div>
 	</footer>
+
+	<nav class="fixed inset-x-0 bottom-0 z-50 flex h-16 border-t bg-background sm:hidden">
+		<a
+			href="/"
+			class="flex flex-1 flex-col items-center justify-center text-xs font-medium {'/' === '/'
+				? 'text-primary'
+				: 'text-muted-foreground'}"
+			aria-label="Home"
+		>
+			<div class="flex size-5 items-center justify-center">
+				<HomeIcon />
+			</div>
+			<span>Home</span>
+		</a>
+	</nav>
 </div>
