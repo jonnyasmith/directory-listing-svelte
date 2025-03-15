@@ -36,13 +36,12 @@
 		children,
 		...restProps
 	}: LinkProps = $props();
+
+	// When href is just "/", we only want to use the base path
+	// For all other hrefs, append them to the base path
+	const finalHref = href === '/' ? base : `${base}${href}`;
 </script>
 
-<a
-	bind:this={ref}
-	class={cn(linkVariants({ variant }), className)}
-	href={`${base}${href}`}
-	{...restProps}
->
+<a bind:this={ref} class={cn(linkVariants({ variant }), className)} href={finalHref} {...restProps}>
 	{@render children?.()}
 </a>

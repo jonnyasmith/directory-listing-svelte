@@ -10,9 +10,13 @@
 	};
 
 	let { title, href, subtitle }: PropTypes = $props();
+
+	// When href is just "/", we only want to use the base path
+	// For all other hrefs, append them to the base path
+	const finalHref = href === '/' ? base : `${base}${href}`;
 </script>
 
-<a href={`${base}${href}`} class="block">
+<a href={finalHref} class="block">
 	<Card
 		class={cn(
 			'h-full transition-all duration-300',

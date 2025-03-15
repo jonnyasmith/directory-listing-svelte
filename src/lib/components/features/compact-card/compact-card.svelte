@@ -9,9 +9,13 @@
 	};
 
 	let { label, href }: PropTypes = $props();
+
+	// When href is just "/", we only want to use the base path
+	// For all other hrefs, append them to the base path
+	const finalHref = href === '/' ? base : `${base}${href}`;
 </script>
 
-<a href={`${base}${href}`} class="block">
+<a href={finalHref} class="block">
 	<Card
 		class={cn(
 			'rounded-md border-0 p-0 shadow-none',
