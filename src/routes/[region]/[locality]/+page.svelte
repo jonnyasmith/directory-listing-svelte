@@ -1,12 +1,13 @@
 <script lang="ts">
 	import BackButton from '$lib/components/ui/back-button.svelte';
+	import { page } from '$app/state';
 	import { BusinessCard } from '$lib/components/features/business-card';
 	import { CompactCard } from '$lib/components/features/compact-card';
-	import { base } from '$app/paths';
 	import { slugify } from '$lib/utils';
 	import { type PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
+	const backHref = `/${page.params.region}`;
 </script>
 
 <section class="mx-auto max-w-6xl px-4 py-12">
@@ -19,7 +20,7 @@
 		</p>
 	</div>
 	<div class="mb-8">
-		<BackButton backText="Back to {data.region}" href={`/${slugify(data.region)}`} />
+		<BackButton backText="Back to {data.region}" href={`/${page.params.region}`} />
 	</div>
 
 	<!-- Businesses in Locality -->
@@ -38,10 +39,7 @@
 			<h2 class="mb-4 text-2xl font-semibold text-foreground">Other Cities in {data.region}</h2>
 			<div class="flex flex-wrap gap-3">
 				{#each data.otherLocalities as locality}
-					<CompactCard
-						label={locality}
-						href={`${base}/${slugify(data.region)}/${slugify(locality)}`}
-					/>
+					<CompactCard label={locality} href={`/${slugify(data.region)}/${slugify(locality)}`} />
 				{/each}
 			</div>
 		</div>

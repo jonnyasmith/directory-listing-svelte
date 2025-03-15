@@ -17,7 +17,13 @@ const config = {
 			precompress: true // Gzip files for faster delivery
 		}),
 		prerender: {
-			entries: ['*'] // Prerender all routes
+			entries: ['*'], // Prerender all routes
+			handleHttpError: ({ path, referrer, message }) => {
+				// Log detailed information about the error to help with debugging
+				console.warn(`Prerender error: ${message}`);
+				console.warn(`Path: ${path}`);
+				console.warn(`Referrer: ${referrer || 'unknown'}`);
+			}
 		}
 	}
 };

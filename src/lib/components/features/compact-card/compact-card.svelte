@@ -12,7 +12,7 @@
 
 	// When href is just "/", we only want to use the base path
 	// For all other hrefs, append them to the base path
-	const finalHref = href === '/' ? base : `${base}${href}`;
+	const finalHref = base ? `${base}${href}` : href;
 </script>
 
 <a href={finalHref} class="block">

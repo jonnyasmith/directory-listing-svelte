@@ -3,7 +3,7 @@
 	import { Link } from '$lib/components/ui/link';
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
-	import { cn } from '$lib/utils';
+	import { cn, slugify } from '$lib/utils';
 
 	export type PropTypes = {
 		business: Business;
@@ -11,7 +11,7 @@
 
 	let { business }: PropTypes = $props();
 
-	const href = `/${business.addressObj.addressRegion.toLowerCase()}/${business.addressObj.addressLocality.toLowerCase()}/${business.slug}`;
+	const href = `/${slugify(business.addressObj.addressRegion)}/${slugify(business.addressObj.addressLocality)}/${business.slug}`;
 </script>
 
 <Card
