@@ -18,7 +18,7 @@
 			'hover:-translate-y-1 hover:bg-primary/20 hover:shadow-md'
 		)}
 	>
-		<CardContent class="p-6 text-center">
+		<CardContent class="p-2 text-center md:p-6">
 			{label}
 		</CardContent>
 	</Card>

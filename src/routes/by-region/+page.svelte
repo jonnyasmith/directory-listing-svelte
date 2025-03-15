@@ -16,7 +16,7 @@
 	<h1 class="mb-8 text-center text-3xl font-bold">Find {config.itemPlural} By State</h1>
 
 	<BreadcrumbNav />
-	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+	<div class="grid grid-cols-3 gap-2 lg:grid-cols-4 lg:gap-4">
 		{#each data.regions as region}
 			<CompactCard label={region.name} href="/{region.slug}" />
 		{/each}

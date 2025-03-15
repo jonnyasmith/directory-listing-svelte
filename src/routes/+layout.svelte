@@ -123,7 +123,7 @@
 		</div>
 	</header>
 
-	<main class="w-full flex-1" id="main-content">
+	<main class="w-full flex-1 py-4" id="main-content">
 		{@render children()}
 	</main>
 

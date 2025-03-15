@@ -48,7 +48,7 @@
 	<!-- Other States/Regions Section - Secondary Content -->
 	<div>
 		<h2 class="mb-4 text-2xl font-semibold text-foreground">Browse Other States</h2>
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+		<div class="grid grid-cols-3 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{#each data.otherRegions as region}
 				<CompactCard label={region.name} href="/{region.slug}" />
 			{/each}
