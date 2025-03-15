@@ -2,6 +2,7 @@
 	import { config } from '$lib/config';
 	import { page } from '$app/state';
 	import { generateFAQJsonLd, generateBreadcrumbJsonLd } from '$lib/utils';
+	import BreadcrumbNav from '$lib/components/features/breadcrumb-nav.svelte';
 
 	// Generate JSON-LD for structured data
 	const breadcrumbItems = [
@@ -42,9 +43,10 @@
 	{@html `<script type="application/ld+json">${faqJsonLd}</script>`}
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-4 py-12">
+<div class="container">
 	<h1 class="mb-6 text-3xl font-bold">About {config.siteName}</h1>
 
+	<BreadcrumbNav />
 	<div class="prose prose-lg max-w-none text-foreground">
 		<p>
 			Welcome to {config.siteName}, your comprehensive directory for discovering local {config.itemPlural},

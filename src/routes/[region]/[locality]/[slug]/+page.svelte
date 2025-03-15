@@ -5,6 +5,7 @@
 	import BackButton from '$lib/components/ui/back-button.svelte';
 	import BusinessDetails from '$lib/components/features/business-details/business-details.svelte';
 	import type { Business } from '$lib/types';
+	import BreadcrumbNav from '$lib/components/features/breadcrumb-nav.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -23,10 +24,8 @@
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-4 py-8">
-	<div class="mb-6">
-		<BackButton backText="Back to {business.addressObj.addressLocality}" href={backHref} />
-	</div>
+<div class="container">
+	<BreadcrumbNav />
 
 	<BusinessDetails {business} />
 </div>

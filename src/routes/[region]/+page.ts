@@ -30,7 +30,7 @@ export const load: PageLoad = ({ params }) => {
 	// Create breadcrumb data
 	const breadcrumbs: BreadcrumbItem[] = [
 		{ label: 'Home', href: '/', icon: HomeIcon },
-		{ label: region.name, href: `/${region.slug}` }
+		{ label: region.name }
 	];
 
 	return {

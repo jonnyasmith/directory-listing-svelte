@@ -2,6 +2,7 @@ import { businesses, localities } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
 import { slugify } from '$lib/utils';
+import type { BreadcrumbItem } from '$lib/types';
 
 export const entries: EntryGenerator = () => {
 	// Get all combinations of regions and localities
@@ -52,10 +53,17 @@ export const load: PageLoad = ({ params }) => {
 		(l) => l.region.name === locality.region.name && l.name !== locality.name
 	);
 
+	const breadcrumbs: BreadcrumbItem[] = [
+		{ label: 'Home', href: '/' },
+		{ label: locality.region.name, href: `/${locality.region.slug}` },
+		{ label: locality.name }
+	];
+
 	return {
 		locality,
 		businesses: businessesInLocality,
 		otherLocalities,
+		breadcrumbs,
 		title: `${locality.name}, ${locality.region.name} Business Directory`,
 		description: `Browse businesses in ${locality.name}, ${locality.region.name}`
 	};

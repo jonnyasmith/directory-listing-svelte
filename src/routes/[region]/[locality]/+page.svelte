@@ -5,6 +5,7 @@
 	import { CompactCard } from '$lib/components/features/compact-card';
 	import { slugify, generateBreadcrumbJsonLd } from '$lib/utils';
 	import { type PageData } from './$types';
+	import BreadcrumbNav from '$lib/components/features/breadcrumb-nav.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -37,12 +38,8 @@
 				.name}
 		</p>
 	</div>
-	<div class="mb-8">
-		<BackButton
-			backText="Back to {data.locality.region.name}"
-			href={`/${data.locality.region.slug}`}
-		/>
-	</div>
+
+	<BreadcrumbNav />
 
 	<!-- Businesses in Locality -->
 	<div class="mb-10">

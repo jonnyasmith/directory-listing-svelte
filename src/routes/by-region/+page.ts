@@ -7,7 +7,7 @@ export function load() {
 	// Create breadcrumb data
 	const breadcrumbs: BreadcrumbItem[] = [
 		{ label: 'Home', href: '/', icon: HomeIcon },
-		{ label: config.navLocationLabel, href: '/by-region' }
+		{ label: config.navLocationLabel }
 	];
 
 	return {

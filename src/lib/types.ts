@@ -52,7 +52,7 @@ export interface BreadcrumbItem {
 	label: string;
 
 	/** The URL the breadcrumb item links to */
-	href: string;
+	href?: string;
 
 	/** Optional icon component to display with the breadcrumb (typically used for Home) */
 	icon?: any; // Using any to accommodate Lucide icon components

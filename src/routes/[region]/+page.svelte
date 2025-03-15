@@ -5,6 +5,7 @@
 	import { type PageData } from './$types';
 	import { page } from '$app/state';
 	import { generateBreadcrumbJsonLd } from '$lib/utils';
+	import BreadcrumbNav from '$lib/components/features/breadcrumb-nav.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -20,7 +21,7 @@
 	{@html `<script type="application/ld+json">${breadcrumbJsonLd}</script>`}
 </svelte:head>
 
-<section class="mx-auto max-w-6xl px-4 py-12">
+<section class="container">
 	<!-- Header Section -->
 	<div class="mb-12 text-center">
 		<h1 class="mb-3 text-4xl font-bold text-foreground">{data.region.name} Business Directory</h1>
@@ -29,11 +30,7 @@
 		</p>
 	</div>
 
-	<!-- Back Button - Navigation -->
-	<div class="mb-8">
-		<BackButton backText="Back to Home" href="/" />
-	</div>
-
+	<BreadcrumbNav />
 	<!-- Localities Section - Primary Content -->
 	<div class="mb-10">
 		<h2 class="mb-6 text-2xl font-semibold text-foreground">Cities in {data.region.name}</h2>

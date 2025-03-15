@@ -14,10 +14,6 @@
 		toggleMode();
 	}
 
-	let { data } = $props();
-
-	console.log(data);
-
 	// Determine if this is the homepage
 	let isHomepage = $derived(page.url.pathname === '/');
 
@@ -124,10 +120,6 @@
 			</div>
 		</div>
 	</header>
-
-	<div class="bg-background">
-		<BreadcrumbNav />
-	</div>
 
 	<main class="w-full flex-1" id="main-content">
 		<slot />
