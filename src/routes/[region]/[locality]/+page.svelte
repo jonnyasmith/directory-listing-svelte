@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { type PageData } from './$types';
-	import { BusinessCard } from '$lib/components/features/business-card';
 	import BackButton from '$lib/components/ui/back-button.svelte';
-	import { slugify } from '$lib/utils';
-	import { config } from '$lib/config';
-	import { base } from '$app/paths';
+	import { BusinessCard } from '$lib/components/features/business-card';
 	import { CompactCard } from '$lib/components/features/compact-card';
+	import { base } from '$app/paths';
+	import { slugify } from '$lib/utils';
+	import { type PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -20,7 +19,7 @@
 		</p>
 	</div>
 	<div class="mb-8">
-		<BackButton />
+		<BackButton backText="Back to {data.region}" href={`/${slugify(data.region)}`} />
 	</div>
 
 	<!-- Businesses in Locality -->

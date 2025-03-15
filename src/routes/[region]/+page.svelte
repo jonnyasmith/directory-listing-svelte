@@ -1,17 +1,15 @@
 <script lang="ts">
-	import { type PageData } from './$types';
-	import { businesses } from '$lib/data';
-	import { BusinessCard } from '$lib/components/features/business-card';
-	import { slugify } from '$lib/utils';
 	import BackButton from '$lib/components/ui/back-button.svelte';
-	import { config } from '$lib/config';
-	import { FeatureCard } from '$lib/components/features/feature-card';
 	import { CompactCard } from '$lib/components/features/compact-card';
+	import { FeatureCard } from '$lib/components/features/feature-card';
+	import { slugify } from '$lib/utils';
+	import { type PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 </script>
 
 <section class="mx-auto max-w-6xl px-4 py-12">
+	<!-- Header Section -->
 	<div class="mb-12 text-center">
 		<h1 class="mb-3 text-4xl font-bold text-foreground">{data.region} Business Directory</h1>
 		<p class="mx-auto max-w-2xl text-xl text-muted-foreground">
@@ -19,8 +17,9 @@
 		</p>
 	</div>
 
+	<!-- Back Button - Navigation -->
 	<div class="mb-8">
-		<BackButton />
+		<BackButton backText="Back to Home" href="/" />
 	</div>
 
 	<!-- Localities Section - Primary Content -->
