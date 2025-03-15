@@ -1,4 +1,4 @@
-import { businesses } from '$lib/data/data';
+import { businesses, localities } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
 import { slugify } from '$lib/utils';
@@ -31,45 +31,32 @@ export const load: PageLoad = ({ params }) => {
 	const slugifiedRegion = params.region;
 	const slugifiedLocality = params.locality;
 
-	// Find the actual region and locality names by matching the slugified versions
-	const allRegions = [...new Set(businesses.map((business) => business.addressObj.addressRegion))];
-	const region = allRegions.find((r) => slugify(r) === slugifiedRegion);
-
-	if (!region) {
-		throw error(404, 'Region not found');
-	}
-
-	const businessesInRegion = businesses.filter(
-		(business) => business.addressObj.addressRegion === region
+	// Find the locality (which includes its region)
+	const locality = localities.find(
+		(l) => l.slug === slugifiedLocality && slugify(l.region.slug) === slugifiedRegion
 	);
-
-	const allLocalities = [
-		...new Set(businessesInRegion.map((business) => business.addressObj.addressLocality))
-	];
-	const locality = allLocalities.find((l) => slugify(l) === slugifiedLocality);
 
 	if (!locality) {
-		throw error(404, 'Locality not found');
+		throw error(404, 'Location not found');
 	}
 
+	// Get businesses in this locality
 	const businessesInLocality = businesses.filter(
 		(business) =>
-			business.addressObj.addressRegion === region &&
-			business.addressObj.addressLocality === locality
+			business.addressObj.addressRegion === locality.region.name &&
+			business.addressObj.addressLocality === locality.name
 	);
 
-	// Get all other localities in this region (excluding the current one)
-	const otherLocalities = allLocalities.filter((l) => l !== locality);
-
-	// Sort other localities alphabetically
-	otherLocalities.sort((a, b) => a.localeCompare(b));
+	// Get other localities in this region
+	const otherLocalities = localities.filter(
+		(l) => l.region.name === locality.region.name && l.name !== locality.name
+	);
 
 	return {
-		region,
 		locality,
 		businesses: businessesInLocality,
 		otherLocalities,
-		title: `${locality}, ${region} Business Directory`,
-		description: `Browse businesses in ${locality}, ${region}`
+		title: `${locality.name}, ${locality.region.name} Business Directory`,
+		description: `Browse businesses in ${locality.name}, ${locality.region.name}`
 	};
 };

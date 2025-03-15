@@ -1,49 +1,35 @@
-import { businesses, regions, localities } from '$lib/data/data';
+import { regions, localities } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
-import { slugify } from '$lib/utils';
-
-export interface Region {
-	region: string;
-	regionSlug: string;
-}
-
-export interface Locality {
-	locality: string;
-	localitySlug: string;
-}
 
 // Define which slugs should be prerendered
 export const entries: EntryGenerator = () => {
-	// Get all unique regions
-	const regions = [...new Set(businesses.map((business) => business.addressObj.addressRegionSlug))];
-
 	return regions.map((region) => ({
-		region: region
+		region: region.slug
 	}));
 };
 
 export const load: PageLoad = ({ params }) => {
 	const slugifiedRegion = params.region;
 
-	// Find the actual region name by matching the slugified version
-	const region = regions.find((r) => slugify(r.name) === slugifiedRegion);
+	// Find the region
+	const region = regions.find((r) => r.slug === slugifiedRegion);
 
 	if (!region) {
 		throw error(404, 'Region not found');
 	}
 
-	// Get all other regions (excluding the current one)
-	const otherRegions = regions.filter((r) => r.name !== region.name);
+	// Get localities in this region
+	const localitiesInRegion = localities.filter((l) => l.region.name === region.name);
 
-	// Sort other regions alphabetically
-	otherRegions.sort((a, b) => a.name.localeCompare(b.name));
+	// Get other regions (excluding the current one)
+	const otherRegions = regions.filter((r) => r.slug !== region.slug);
 
 	return {
 		region,
-		localities,
+		localities: localitiesInRegion,
 		otherRegions,
-		title: `${region} Local Business Directory`,
-		description: `Browse businesses in ${region}`
+		title: `${region.name} Local Business Directory`,
+		description: `Browse businesses in ${region.name}`
 	};
 };

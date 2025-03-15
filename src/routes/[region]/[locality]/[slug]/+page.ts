@@ -6,24 +6,30 @@ import { error } from '@sveltejs/kit';
 export const entries: EntryGenerator = () => {
 	return businesses.map((business) => ({
 		slug: business.slug,
-		region: business.addressObj.addressRegion,
-		locality: business.addressObj.addressLocality
+		region: business.addressObj.addressRegionSlug,
+		locality: business.addressObj.addressLocalitySlug
 	}));
 };
 
 // This will be executed at build time for static generation
 export const load: PageLoad = ({ params }) => {
-	const { slug } = params;
-	const business = businesses.find((b) => b.slug === slug);
+	const { slug, region: slugifiedRegion, locality: slugifiedLocality } = params;
+
+	// Find business matching slug, region, and locality
+	const business = businesses.find(
+		(b) =>
+			b.slug === slug &&
+			b.addressObj.addressRegionSlug === slugifiedRegion &&
+			b.addressObj.addressLocalitySlug === slugifiedLocality
+	);
 
 	if (!business) {
-		// Use the error helper function instead of returning an object with status
-		throw error(404, `Business ${slug} not found`);
+		throw error(404, 'Business not found');
 	}
 
 	return {
 		business,
-		title: `${business.name} - ${business.category} in ${business.address.split(',')[0]}`,
+		title: `${business.name} - ${business.category} in ${business.addressObj.addressLocality}, ${business.addressObj.addressRegion}`,
 		description: `Contact ${business.name}, a ${business.category.toLowerCase()} business located at ${business.address}. Call ${business.phone} for more information.`
 	};
 };

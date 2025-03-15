@@ -7,25 +7,28 @@
 	import { type PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
-	const backHref = `/${page.params.region}`;
 </script>
 
 <section class="mx-auto max-w-6xl px-4 py-12">
 	<div class="mb-12 text-center">
 		<h1 class="mb-3 text-4xl font-bold text-foreground">
-			{data.locality}, {data.region} Business Directory
+			{data.locality.name}, {data.locality.region.name} Business Directory
 		</h1>
 		<p class="mx-auto max-w-2xl text-xl text-muted-foreground">
-			Find and explore the best local businesses in {data.locality}, {data.region}
+			Find and explore the best local businesses in {data.locality.name}, {data.locality.region
+				.name}
 		</p>
 	</div>
 	<div class="mb-8">
-		<BackButton backText="Back to {data.region}" href={`/${page.params.region}`} />
+		<BackButton
+			backText="Back to {data.locality.region.name}"
+			href={`/${data.locality.region.slug}`}
+		/>
 	</div>
 
 	<!-- Businesses in Locality -->
 	<div class="mb-10">
-		<h2 class="mb-6 text-2xl font-semibold text-foreground">Businesses in {data.locality}</h2>
+		<h2 class="mb-6 text-2xl font-semibold text-foreground">Businesses in {data.locality.name}</h2>
 		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each data.businesses as business}
 				<BusinessCard {business} />
@@ -36,10 +39,15 @@
 	<!-- Other Cities Section -->
 	{#if data.otherLocalities && data.otherLocalities.length > 0}
 		<div class="mt-12">
-			<h2 class="mb-4 text-2xl font-semibold text-foreground">Other Cities in {data.region}</h2>
+			<h2 class="mb-4 text-2xl font-semibold text-foreground">
+				Other Cities in {data.locality.region.name}
+			</h2>
 			<div class="flex flex-wrap gap-3">
 				{#each data.otherLocalities as locality}
-					<CompactCard label={locality} href={`/${slugify(data.region)}/${slugify(locality)}`} />
+					<CompactCard
+						label={locality.name}
+						href={`/${locality.region.slug}/${slugify(locality.slug)}`}
+					/>
 				{/each}
 			</div>
 		</div>
