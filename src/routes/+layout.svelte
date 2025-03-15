@@ -1,9 +1,9 @@
 <script>
 	import '../app.css';
-	import { page } from '$app/state';
 	import { Button } from '$lib/components/ui/button';
 	import { config } from '$lib/config';
-	import { base } from '$app/paths';
+	import { page } from '$app/state';
+	import { Link } from '$lib/components/ui/link';
 	import { ModeWatcher, toggleMode, mode } from 'mode-watcher';
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import MoonIcon from '@lucide/svelte/icons/moon';
@@ -29,28 +29,26 @@
 
 <ModeWatcher />
 <div class="flex min-h-svh flex-col">
-	<header class="bg-header border-b border-border">
+	<header class="border-b border-border bg-header">
 		<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
 			<div class="flex items-center">
 				<!-- Logo placeholder - you can replace with actual logo component later -->
-				<a href="{base}/" class="transition-colors hover:text-primary">
-					<div class="text-header-foreground text-xl font-bold">{config.siteName}</div>
-				</a>
+				<Link href="/" class="transition-colors hover:text-primary">
+					<div class="text-xl font-bold text-header-foreground">{config.siteName}</div>
+				</Link>
 			</div>
 			<div class="flex items-center space-x-8">
 				<nav>
 					<ul class="flex items-center space-x-8">
 						<li>
-							<a
-								href="{base}/by-region"
-								class="text-header-foreground font-medium hover:text-primary"
-								>{config.navLocationLabel}</a
-							>
+							<Link href="/by-region" class="font-medium text-header-foreground hover:text-primary">
+								{config.navLocationLabel}
+							</Link>
 						</li>
 						<li>
-							<a href="{base}/about" class="text-header-foreground font-medium hover:text-primary"
-								>{config.navAboutLabel}</a
-							>
+							<Link href="/about" class="font-medium text-header-foreground hover:text-primary">
+								{config.navAboutLabel}
+							</Link>
 						</li>
 						<li>
 							<Button

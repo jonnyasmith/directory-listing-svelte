@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { type Business } from '$lib/types';
-	import { base } from '$app/paths';
 	import { Link } from '$lib/components/ui/link';
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
@@ -12,7 +11,7 @@
 
 	let { business }: PropTypes = $props();
 
-	const href = `${base}/${business.addressObj.addressRegion.toLowerCase()}/${business.addressObj.addressLocality.toLowerCase()}/${business.slug}`;
+	const href = `/${business.addressObj.addressRegion.toLowerCase()}/${business.addressObj.addressLocality.toLowerCase()}/${business.slug}`;
 </script>
 
 <Card

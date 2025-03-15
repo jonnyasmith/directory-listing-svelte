@@ -1,4 +1,5 @@
 <script lang="ts" module>
+	import { base } from '$app/paths';
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import { type VariantProps, tv } from 'tailwind-variants';
@@ -37,6 +38,11 @@
 	}: LinkProps = $props();
 </script>
 
-<a bind:this={ref} class={cn(linkVariants({ variant }), className)} {href} {...restProps}>
+<a
+	bind:this={ref}
+	class={cn(linkVariants({ variant }), className)}
+	href={`${base}${href}`}
+	{...restProps}
+>
 	{@render children?.()}
 </a>

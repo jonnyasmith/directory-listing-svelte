@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { slugify } from '$lib/utils';
 	import { Card, CardHeader, CardTitle, CardContent } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
+	import { base } from '$app/paths';
 
 	export type PropTypes = {
 		title: string;
@@ -12,7 +12,7 @@
 	let { title, href, subtitle }: PropTypes = $props();
 </script>
 
-<a {href} class="block">
+<a href={`${base}${href}`} class="block">
 	<Card
 		class={cn(
 			'h-full transition-all duration-300',

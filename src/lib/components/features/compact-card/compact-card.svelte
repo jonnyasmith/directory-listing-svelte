@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
+	import { base } from '$app/paths';
 
 	export type PropTypes = {
 		label: string;
@@ -10,7 +11,7 @@
 	let { label, href }: PropTypes = $props();
 </script>
 
-<a {href} class="block">
+<a href={`${base}${href}`} class="block">
 	<Card
 		class={cn(
 			'rounded-md border-0 p-0 shadow-none',
