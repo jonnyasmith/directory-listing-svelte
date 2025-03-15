@@ -14,10 +14,16 @@ export interface Business {
 	name: string;
 	slug: string; // URL-friendly version of the name
 	category: string;
+	schemaType?: string; // Optional specific Schema.org business type (e.g., "Restaurant", "Store")
 	address: string; // Legacy field for backward compatibility
 	addressObj: Address; // Structured address object
 	phone: string;
 	website?: string;
+	images?: string[]; // Array of image URLs for the business
+	geo?: {
+		latitude: number;
+		longitude: number;
+	}; // Geo coordinates for the business
 	openingHours?: {
 		dayOfWeek: string[];
 		opens: string;

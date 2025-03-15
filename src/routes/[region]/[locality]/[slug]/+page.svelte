@@ -9,7 +9,13 @@
 	let { data }: PageProps = $props();
 
 	const { business }: { business: Business } = data;
-	const jsonLd = JSON.stringify(generateLocalBusinessJsonLd(business));
+
+	// Build the canonical URL using the current URL path
+	// Since we can't access the full URL in SSR context, we'll use a relative URL
+	const pathParts = [page.params.region, page.params.locality, page.params.slug];
+	const canonicalPath = `/${pathParts.join('/')}`;
+
+	const jsonLd = JSON.stringify(generateLocalBusinessJsonLd(business, canonicalPath));
 	const backHref = `/${page.params.region}/${page.params.locality}`;
 </script>
 

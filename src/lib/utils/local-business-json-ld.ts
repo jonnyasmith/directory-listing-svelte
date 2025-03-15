@@ -1,6 +1,6 @@
 import type { Business } from '$lib/types';
 
-export function generateLocalBusinessJsonLd(business: Business) {
+export function generateLocalBusinessJsonLd(business: Business, currentUrl?: string) {
 	// Create address object for JSON-LD
 	let addressForJsonLd: any = {
 		'@type': 'PostalAddress',
@@ -29,15 +29,20 @@ export function generateLocalBusinessJsonLd(business: Business) {
 		}
 	}
 
-	// Build the JSON-LD object
+	// Build the JSON-LD object with appropriate business type
 	const jsonLd: any = {
 		'@context': 'https://schema.org',
-		'@type': 'LocalBusiness',
+		'@type': business.schemaType || 'LocalBusiness',
 		name: business.name,
 		description: `${business.name} is a ${business.category.toLowerCase()} located at ${business.address}`,
 		address: addressForJsonLd,
 		telephone: business.phone
 	};
+
+	// Add canonical URL for the business page if provided
+	if (currentUrl) {
+		jsonLd.mainEntityOfPage = currentUrl;
+	}
 
 	// Add area served based on address
 	const areaName = business.addressObj?.addressLocality || business.address.split(',')[0];
@@ -69,6 +74,20 @@ export function generateLocalBusinessJsonLd(business: Business) {
 			opens: '09:00',
 			closes: '17:00'
 		};
+	}
+
+	// Add geo coordinates if available
+	if (business.geo) {
+		jsonLd.geo = {
+			'@type': 'GeoCoordinates',
+			latitude: business.geo.latitude,
+			longitude: business.geo.longitude
+		};
+	}
+
+	// Add images if available
+	if (business.images && business.images.length > 0) {
+		jsonLd.image = business.images;
 	}
 
 	return jsonLd;
