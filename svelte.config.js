@@ -23,6 +23,8 @@ const config = {
 				console.warn(`Prerender error: ${message}`);
 				console.warn(`Path: ${path}`);
 				console.warn(`Referrer: ${referrer || 'unknown'}`);
+
+				throw new Error(`${message} (${path}${referrer ? ` - referrer: ${referrer}` : ''})`);
 			}
 		}
 	}
