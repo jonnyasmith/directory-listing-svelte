@@ -10,9 +10,9 @@
 <section class="mx-auto max-w-6xl px-4 py-12">
 	<!-- Header Section -->
 	<div class="mb-12 text-center">
-		<h1 class="mb-3 text-4xl font-bold text-foreground">{data.region} Business Directory</h1>
+		<h1 class="mb-3 text-4xl font-bold text-foreground">{data.region.name} Business Directory</h1>
 		<p class="mx-auto max-w-2xl text-xl text-muted-foreground">
-			Find and explore the best local businesses in {data.region}
+			Find and explore the best local businesses in {data.region.name}
 		</p>
 	</div>
 
