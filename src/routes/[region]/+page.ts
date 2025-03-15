@@ -1,4 +1,4 @@
-import { businesses } from '$lib/data/data';
+import { businesses, regions, localities } from '$lib/data/data';
 import { error } from '@sveltejs/kit';
 import type { PageLoad, EntryGenerator } from './$types';
 import { slugify } from '$lib/utils';
@@ -27,26 +27,17 @@ export const load: PageLoad = ({ params }) => {
 	const slugifiedRegion = params.region;
 
 	// Find the actual region name by matching the slugified version
-	const allRegions = [...new Set(businesses.map((business) => business.addressObj.addressRegion))];
-	const region = allRegions.find((r) => slugify(r) === slugifiedRegion);
+	const region = regions.find((r) => slugify(r.name) === slugifiedRegion);
 
 	if (!region) {
 		throw error(404, 'Region not found');
 	}
 
-	const businessesInRegion = businesses.filter(
-		(business) => business.addressObj.addressRegion === region
-	);
-
-	const localities = [
-		...new Set(businessesInRegion.map((business) => business.addressObj.addressLocality))
-	];
-
 	// Get all other regions (excluding the current one)
-	const otherRegions = allRegions.filter((r) => r !== region);
+	const otherRegions = regions.filter((r) => r.name !== region.name);
 
 	// Sort other regions alphabetically
-	otherRegions.sort((a, b) => a.localeCompare(b));
+	otherRegions.sort((a, b) => a.name.localeCompare(b.name));
 
 	return {
 		region,

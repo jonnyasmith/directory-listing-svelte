@@ -29,10 +29,10 @@
 		<h2 class="mb-8 text-center text-3xl font-bold">{config.locationSectionTitle}</h2>
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-			{#each data.cities as city}
+			{#each data.localities as locality}
 				<CompactCard
-					label={`${city.name}, ${city.region.shortName}`}
-					href="/{city.region.slug}/{city.slug}"
+					label={`${locality.name}, ${locality.region.shortName}`}
+					href="/{locality.region.slug}/{locality.slug}"
 				/>
 			{/each}
 		</div>

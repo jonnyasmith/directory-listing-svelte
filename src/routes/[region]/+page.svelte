@@ -2,7 +2,6 @@
 	import BackButton from '$lib/components/ui/back-button.svelte';
 	import { CompactCard } from '$lib/components/features/compact-card';
 	import { FeatureCard } from '$lib/components/features/feature-card';
-	import { slugify } from '$lib/utils';
 	import { type PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -24,13 +23,13 @@
 
 	<!-- Localities Section - Primary Content -->
 	<div class="mb-10">
-		<h2 class="mb-6 text-2xl font-semibold text-foreground">Cities in {data.region}</h2>
+		<h2 class="mb-6 text-2xl font-semibold text-foreground">Cities in {data.region.name}</h2>
 		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each data.localities as locality}
 				<FeatureCard
-					title={locality}
-					href="/{slugify(data.region)}/{slugify(locality)}"
-					subtitle={`Explore businesses in ${locality}`}
+					title={locality.name}
+					href="/{data.region.slug}/{locality.slug}"
+					subtitle={`Explore businesses in ${locality.name}`}
 				/>
 			{/each}
 		</div>
@@ -41,7 +40,7 @@
 		<h2 class="mb-4 text-2xl font-semibold text-foreground">Browse Other States</h2>
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{#each data.otherRegions as region}
-				<CompactCard label={region} href="/{slugify(region)}" />
+				<CompactCard label={region.name} href="/{region.slug}" />
 			{/each}
 		</div>
 	</div>
