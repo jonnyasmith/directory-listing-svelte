@@ -14,6 +14,8 @@
 		toggleMode();
 	}
 
+	let { children } = $props();
+
 	// Determine if this is the homepage
 	let isHomepage = $derived(page.url.pathname === '/');
 
@@ -122,7 +124,7 @@
 	</header>
 
 	<main class="w-full flex-1" id="main-content">
-		<slot />
+		{@render children()}
 	</main>
 
 	<footer class="bg-header text-header-foreground">
